@@ -19,13 +19,20 @@ a {
   box-sizing: border-box;
 }
 
-.dropdown:hover .dropdown-menu {
-  visibility: visible;
-  transform: translateY(0.5rem);
-  opacity: 1;
-  transition: all 0.4s ease-in;
-}
-.dropdown .dropdown-menu {
-  opacity: 0;
-  transition: all 0.3s ease-out;
+.header {
+  .dropdown:hover .dropdown-menu {
+    visibility: visible;
+    transform: translateY(0.5rem);
+    opacity: 1;
+    transition: all 0.4s ease-in;
+  }
+  .dropdown .dropdown-menu {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+
+  .collapsible {
+    overflow: hidden;
+    transition: height 1s;
+  }
 }

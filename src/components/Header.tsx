@@ -1,9 +1,11 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/images/logo_NCSC.png";
 import Button from "../common/Button";
+import { MenuIcon } from "@heroicons/react/solid";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const headerEl = [
     {
       title: "Trang chủ",
@@ -92,7 +94,7 @@ const Header = () => {
     },
   ];
   return (
-    <div className="">
+    <div className="header">
       <header>
         <div className="w-full py-0.5 bg-gray-100 font-light text-left md:text-md text-xs text-gray-500 hover:text-red-500">
           <div className="container">
@@ -105,15 +107,30 @@ const Header = () => {
             </a>
           </div>
         </div>
-
         <div className="container">
-          <div className="flex flex-row justify-between">
-            <a href="/home" className="relative w-40 h-20">
-              <Image src={logo} alt="logo" layout="fill" objectFit="contain" />
-            </a>
-            <div className="px-6 flex flex-row items-center justify-between font-semibold text-base text-primary-200">
+          <div className="flex md:flex-row flex-col justify-between">
+            <div className="flex flex-row items-center justify-between">
+              <a href="/home" className="relative w-40 h-20">
+                <Image
+                  src={logo}
+                  alt="logo"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </a>
+              <div
+                className="cursor-pointer md:hidden block"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <MenuIcon className="w-10" />
+              </div>
+            </div>
+            <div
+              className={`collapsible md:p-6 p-2 flex md:flex-row flex-col md:items-center items-start justify-between font-semibold text-base text-primary-200 bg-white
+              ${isOpen ? "md:h-auto h-[560px]" : "h-0 md:h-auto"}`}
+            >
               {headerEl.map((item, index) => (
-                <div key={index} className="m-5">
+                <div key={index} className="md:m-5 my-5">
                   {item.link ? (
                     <a href={item.link} className="hover:text-primary-400">
                       {item.title}
@@ -155,8 +172,11 @@ const Header = () => {
                   )}
                 </div>
               ))}
+              <div className="md:hidden flex items-center">
+                <Button className="hover:bg-primary-500">Báo NCSC</Button>
+              </div>
             </div>
-            <div className="flex items-center">
+            <div className="md:flex hidden items-center">
               <Button className="hover:bg-primary-500">Báo NCSC</Button>
             </div>
           </div>
