@@ -125,13 +125,12 @@ const Footer = () => {
                 </ul>
               </div>
             ))}
-            <div className="md:w-1/4 w-full flex flex-col px-5">
-              <a href="/home">
+            <div className="md:w-1/4 w-full flex flex-col px-5 mt-10">
+              <a href="/home" className="relative w-40 h-20">
                 <Image
                   src={logo}
                   alt="logo"
-                  width={"160px"}
-                  height={"100px"}
+                  layout="fill"
                   objectFit="contain"
                 />
               </a>
@@ -139,15 +138,13 @@ const Footer = () => {
                 href="https://tinnhiemmang.vn/danh-ba-tin-nhiem/khonggianmangvn"
                 target="_blank"
                 rel="noreferrer"
-                className=""
+                className="relative w-40 h-24 mt-5"
               >
                 <Image
                   src="https://tinnhiemmang.vn/storage/photos/shares/Configs/LabelTrust/web_premium.png"
                   alt="Tín nhiệm mạng"
+                  layout="fill"
                   objectFit="contain"
-                  width={"150px"}
-                  height={"100px"}
-                  priority
                 />
               </a>
             </div>
