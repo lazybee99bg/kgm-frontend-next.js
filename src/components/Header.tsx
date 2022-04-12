@@ -53,8 +53,8 @@ const Header = () => {
           link: "https://bugbounty.vn",
         },
         {
-          name: "https://service.khonggianmang.vn",
-          link: "Hệ thống cảnh báo điểm yếu và rà soát lỗ hổng bảo mật tự động",
+          name: "Hệ thống cảnh báo điểm yếu và rà soát lỗ hổng bảo mật tự động",
+          link: "https://service.khonggianmang.vn",
         },
         {
           name: "Hệ thống gán nhãn Website Tín nhiệm mạng",
@@ -119,15 +119,38 @@ const Header = () => {
                       {item.title}
                     </a>
                   ) : (
-                    <div>
-                      <span className="hover:text-primary-400 cursor-pointer">
+                    <div className="dropdown">
+                      <span className="hover:text-primary-400 cursor-pointer font-base">
                         {item.title}
+                        <svg
+                          className="md:hidden block ml-1 w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 9l-7 7-7-7"
+                          ></path>
+                        </svg>
                       </span>
-                      {item.element.map((element, index) => (
-                        <div key={index} className="hidden">
-                          {element.name}
-                        </div>
-                      ))}
+                      <div className="dropdown-menu invisible translate-y-4 absolute z-10 w-56 rounded shadow bg-white">
+                        <ul className="">
+                          {item.element.map((element, index) => (
+                            <li key={index} className="mx-2 my-4">
+                              <a
+                                href={element.link}
+                                className="hover:text-primary-400"
+                              >
+                                {element.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   )}
                 </div>
