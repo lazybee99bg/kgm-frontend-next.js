@@ -149,6 +149,15 @@ const Footer = () => {
               </a>
             </div>
           </div>
+          <div className="w-full border-t-[0.2px] py-6">
+            <a
+              className="text-gray-200 font-extralight text-sm"
+              href="https://khonggianmang.vn"
+            >
+              Copyright © 2022 Trung tâm Giám sát an toàn không gian mạng quốc
+              gia
+            </a>
+          </div>
         </div>
       </footer>
       {/* End Footer Area */}
