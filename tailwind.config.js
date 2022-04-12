@@ -1,10 +1,5 @@
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   screens: {
     sm: "640px",
     // => @media (min-width: 640px) { ... }
@@ -31,7 +26,18 @@ module.exports = {
         "2xl": "6rem",
       },
       colors: {
-        primary: "#a8d500",
+        primary: {
+          50: "#838e9e",
+          100: "#6a778b",
+          200: "#516177",
+          300: "#394a64",
+          400: "#203450",
+          500: "#071d3d",
+          600: "#061a37",
+          700: "#061731",
+          800: "#05142b",
+          900: "#041125",
+        },
         dark: {
           50: "#F5F5F5",
           100: "#E1E1E1",
