@@ -85,65 +85,72 @@ const Footer = () => {
     <div>
       {/* Start Footer Area */}
       <footer className="w-full bg-primary-900">
-        <div className="container grid grid-cols-4 gap-4  py-20">
-          {footerEl.map((item, index) => (
-            <div key={index} className="flex flex-col items-start">
-              {/* title */}
-              <h3 className="flex flex-row items-center text-white mb-8">
-                <span className="absolute text-7xl opacity-25">
-                  {item.title.charAt(0).toUpperCase()}
-                </span>
-                <span className="text-lg">&nbsp;&nbsp;&nbsp;{item.title}</span>
-              </h3>
-              {/* element */}
-              <ul>
-                {item.element.map((element, index) => (
-                  <li
-                    key={index}
-                    className="flex flex-col py-2 font-normal text-primary-300"
-                  >
-                    {element.link ? (
-                      <a
-                        href={element.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition hover:translate-x-1 hover:text-white"
-                      >
+        <div className="container">
+          <div className="flex md:flex-row flex-col justify-between py-10">
+            {footerEl.map((item, index) => (
+              <div
+                key={index}
+                className="md:w-1/4 w-full flex flex-col items-start px-5 py-10"
+              >
+                {/* title */}
+                <h3 className="flex flex-row items-center text-white mb-8">
+                  <span className="absolute text-7xl opacity-25">
+                    {item.title.charAt(0).toUpperCase()}
+                  </span>
+                  <span className="text-lg">
+                    &nbsp;&nbsp;&nbsp;{item.title}
+                  </span>
+                </h3>
+                {/* element */}
+                <ul>
+                  {item.element.map((element, index) => (
+                    <li
+                      key={index}
+                      className="flex flex-col py-2 font-normal text-primary-300"
+                    >
+                      {element.link ? (
+                        <a
+                          href={element.link}
+                          //   target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition hover:translate-x-1 hover:text-white"
+                        >
+                          <span>{element.name}</span>
+                        </a>
+                      ) : (
                         <span>{element.name}</span>
-                      </a>
-                    ) : (
-                      <span>{element.name}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <div className="md:w-1/4 w-full flex flex-col px-5">
+              <a href="/home">
+                <Image
+                  src={logo}
+                  alt="logo"
+                  width={"160px"}
+                  height={"100px"}
+                  objectFit="contain"
+                />
+              </a>
+              <a
+                href="https://tinnhiemmang.vn/danh-ba-tin-nhiem/khonggianmangvn"
+                target="_blank"
+                rel="noreferrer"
+                className=""
+              >
+                <Image
+                  src="https://tinnhiemmang.vn/storage/photos/shares/Configs/LabelTrust/web_premium.png"
+                  alt="Tín nhiệm mạng"
+                  objectFit="contain"
+                  width={"150px"}
+                  height={"100px"}
+                  priority
+                />
+              </a>
             </div>
-          ))}
-          <div>
-            <a href="#">
-              <Image
-                src={logo}
-                alt="logo"
-                width={"160px"}
-                height={"100px"}
-                objectFit="contain"
-              />
-            </a>
-            <a
-              href="https://tinnhiemmang.vn/danh-ba-tin-nhiem/khonggianmangvn"
-              target="_blank"
-              rel="noreferrer"
-              className=""
-            >
-              <Image
-                src="https://tinnhiemmang.vn/storage/photos/shares/Configs/LabelTrust/web_premium.png"
-                alt="Tín nhiệm mạng"
-                objectFit="contain"
-                width={"150px"}
-                height={"100px"}
-                priority
-              />
-            </a>
           </div>
         </div>
       </footer>
