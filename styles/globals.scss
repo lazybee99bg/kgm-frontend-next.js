@@ -6,8 +6,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #eee;
 }
 
 a {
@@ -38,7 +37,7 @@ a {
 }
 
 .dot-transition {
-  $dot-size: 0.75rem;
+  $dot-size: 0.7rem;
 
   position: relative;
   width: 100%;
@@ -60,4 +59,16 @@ a {
       left: calc(100% - $dot-size);
     }
   }
+}
+
+.card-transition:hover .icon {
+  color: #fff;
+  opacity: 1;
+  background-color: rgb(32 52 80);
+  transform: all 0.5s ease-in;
+}
+.card-transition .icon {
+  opacity: 0.9;
+  background-color: rgb(241 245 249);
+  transform: all 0.5s ease-out;
 }
