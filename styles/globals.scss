@@ -36,3 +36,29 @@ a {
     transition: height 1s;
   }
 }
+
+.dot-transition {
+  $dot-size: 0.75rem;
+
+  position: relative;
+
+  width: $dot-size * 10;
+  height: $dot-size / 2;
+  .dot {
+    position: absolute;
+    top: -$dot-size / 4;
+    width: $dot-size;
+    height: $dot-size;
+    animation: move_left 5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes move_left {
+    from {
+      left: 0px;
+    }
+    to {
+      left: $dot-size * 9;
+    }
+  }
+}
