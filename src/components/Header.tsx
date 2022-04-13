@@ -176,11 +176,21 @@ const Header = () => {
                 </div>
               ))}
               <div className="lg:hidden flex items-center">
-                <Button className="hover:bg-primary-500">Báo NCSC</Button>
+                <Button
+                  href="https://canhbao.ncsc.gov.vn/"
+                  className="hover:bg-primary-500"
+                >
+                  Báo NCSC
+                </Button>
               </div>
             </div>
             <div className="lg:flex hidden items-center">
-              <Button className="hover:bg-primary-500">Báo NCSC</Button>
+              <Button
+                href="https://canhbao.ncsc.gov.vn/"
+                className="hover:bg-primary-500"
+              >
+                Báo NCSC
+              </Button>
             </div>
           </div>
         </div>
