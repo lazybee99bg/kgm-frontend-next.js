@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo_NCSC_white.png";
@@ -86,18 +87,15 @@ const Footer = () => {
       {/* Start Footer Area */}
       <footer className="w-full bg-primary-900">
         <div className="container">
-          <div className="flex md:flex-row flex-col justify-between py-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 justify-between py-10">
             {footerEl.map((item, index) => (
-              <div
-                key={index}
-                className="md:w-1/4 w-full flex flex-col items-start px-5 py-10"
-              >
+              <div key={index} className="flex flex-col items-start px-5 py-10">
                 {/* title */}
                 <h3 className="flex flex-row items-center text-white mb-8">
                   <span className="absolute text-7xl opacity-25">
                     {item.title.charAt(0).toUpperCase()}
                   </span>
-                  <span className="text-lg">
+                  <span className="lg:text-lg text-base">
                     &nbsp;&nbsp;&nbsp;{item.title}
                   </span>
                 </h3>
@@ -106,7 +104,7 @@ const Footer = () => {
                   {item.element.map((element, index) => (
                     <li
                       key={index}
-                      className="flex flex-col py-2 font-normal text-primary-300"
+                      className="flex flex-col py-2 font-normal lg:text-base text-sm text-primary-300"
                     >
                       {element.link ? (
                         <a
@@ -125,20 +123,22 @@ const Footer = () => {
                 </ul>
               </div>
             ))}
-            <div className="md:w-1/4 w-full flex flex-col px-5 mt-10">
-              <a href="/home" className="relative w-40 h-20">
-                <Image
-                  src={logo}
-                  alt="logo"
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </a>
+            <div className=" w-fill flex md:flex-col flex-row lg:items-end items-start px-5 lg:mt-10 mt-5">
+              <Link href="/home" passHref>
+                <div className="relative lg:w-40 w-36 h-24 cursor-pointer">
+                  <Image
+                    src={logo}
+                    alt="logo"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </Link>
               <a
                 href="https://tinnhiemmang.vn/danh-ba-tin-nhiem/khonggianmangvn"
                 target="_blank"
                 rel="noreferrer"
-                className="relative w-40 h-24 mt-5"
+                className="relative lg:w-40 w-36 h-24 mt-5"
               >
                 <Image
                   src="https://tinnhiemmang.vn/storage/photos/shares/Configs/LabelTrust/web_premium.png"

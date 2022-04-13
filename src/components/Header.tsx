@@ -109,7 +109,7 @@ const Header = () => {
           </div>
         </div>
         <div className="container">
-          <div className="flex md:flex-row flex-col justify-between">
+          <div className="flex lg:flex-row flex-col justify-between">
             <div className="flex flex-row items-center justify-between">
               <Link href="/" passHref>
                 <div className="cursor-pointer relative w-40 h-20">
@@ -122,28 +122,28 @@ const Header = () => {
                 </div>
               </Link>
               <div
-                className="cursor-pointer md:hidden block"
+                className="cursor-pointer lg:hidden block"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <MenuIcon className="w-10" />
               </div>
             </div>
             <div
-              className={`collapsible md:p-6 p-2 flex md:flex-row flex-col md:items-center items-start justify-between font-semibold text-base text-primary-200 bg-white
-              ${isOpen ? "md:h-auto h-[560px]" : "h-0 md:h-auto"}`}
+              className={`collapsible lg:p-6 p-2 flex lg:flex-row flex-col lg:items-center items-start justify-between font-semibold text-base text-primary-200 bg-white
+              ${isOpen ? "lg:h-auto h-[560px]" : "h-0 lg:h-auto"}`}
             >
               {headerEl.map((item, index) => (
-                <div key={index} className="md:m-5 my-5">
+                <div key={index} className="lg:m-5 my-5">
                   {item.link ? (
                     <a href={item.link} className="hover:text-primary-400">
                       {item.title}
                     </a>
                   ) : (
                     <div className="dropdown">
-                      <span className="hover:text-primary-400 cursor-pointer font-base">
+                      <span className="hover:text-primary-400 cursor-pointer font-base flex items-center">
                         {item.title}
                         <svg
-                          className="md:hidden block ml-1 w-4 h-4"
+                          className="lg:hidden block ml-1 w-4 h-4"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -175,11 +175,11 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <div className="md:hidden flex items-center">
+              <div className="lg:hidden flex items-center">
                 <Button className="hover:bg-primary-500">Báo NCSC</Button>
               </div>
             </div>
-            <div className="md:flex hidden items-center">
+            <div className="lg:flex hidden items-center">
               <Button className="hover:bg-primary-500">Báo NCSC</Button>
             </div>
           </div>
