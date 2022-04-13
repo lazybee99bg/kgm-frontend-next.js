@@ -6,7 +6,7 @@ const intro = () => {
     <div>
       <LayoutPage>
         <div className="container">
-          <MovingDot />
+          <MovingDot width={"w-36"} />
         </div>
       </LayoutPage>
     </div>

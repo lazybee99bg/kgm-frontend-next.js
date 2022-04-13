@@ -41,8 +41,7 @@ a {
   $dot-size: 0.75rem;
 
   position: relative;
-
-  width: $dot-size * 10;
+  width: 100%;
   height: $dot-size / 2;
   .dot {
     position: absolute;
@@ -55,10 +54,10 @@ a {
 
   @keyframes move_left {
     from {
-      left: 0px;
+      left: 0;
     }
     to {
-      left: $dot-size * 9;
+      left: calc(100% - $dot-size);
     }
   }
 }
