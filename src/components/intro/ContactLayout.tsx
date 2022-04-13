@@ -22,8 +22,8 @@ const ContactLayout = () => {
     },
     {
       Icon: <PhoneIcon className="w-8" />,
-      title: "Thư điện tử :",
-      content: "Tầng 5, Tòa nhà Công ty Cổ phần Không gian Mạng",
+      title: "Điện thoại hỗ trợ :",
+      content: "(+84) 24 3209 6789",
     },
   ];
 
@@ -37,11 +37,11 @@ const ContactLayout = () => {
           {contactinfo.map((item, index) => (
             <div
               key={index}
-              className="transition hover:-translate-y-2 duration-500 card-transition flex flex-col items-center justify-center px-10 h-64 bg-white text-center"
+              className="contact-info-box flex flex-col items-center justify-center px-10 h-64 bg-white text-center"
             >
               <div className="icon rounded-full p-4">{item.Icon}</div>
-              <span className="my-6 text-black">{item.title}</span>
-              <span className="text-primary-300">{item.content}</span>
+              <h3 className="my-6 text-black">{item.title}</h3>
+              <p className="text-primary-300">{item.content}</p>
             </div>
           ))}
         </div>

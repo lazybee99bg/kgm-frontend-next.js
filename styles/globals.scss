@@ -61,14 +61,43 @@ a {
   }
 }
 
-.card-transition:hover .icon {
-  color: #fff;
-  opacity: 1;
-  background-color: rgb(32 52 80);
-  transform: all 0.5s ease-in;
+.contact-info-box {
+  text-align: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  padding: 30px;
+  .icon {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    line-height: 62px;
+    background: #f7fafd;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #071d3d;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  h3 {
+    font-size: 18px;
+    margin: 25px 0 15px;
+  }
+  p a {
+    color: #324e66;
+  }
+  p a:hover {
+    color: #071d3d;
+  }
 }
-.card-transition .icon {
-  opacity: 0.9;
-  background-color: rgb(241 245 249);
-  transform: all 0.5s ease-out;
+
+.contact-info-box:hover {
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  .icon {
+    color: #ffffff;
+    background: #071d3d;
+  }
 }
