@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import logo from "../../assets/images/logo_NCSC.png";
 import Button from "../common/Button";
 import { MenuIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -110,14 +111,16 @@ const Header = () => {
         <div className="container">
           <div className="flex md:flex-row flex-col justify-between">
             <div className="flex flex-row items-center justify-between">
-              <a href="/home" className="relative w-40 h-20">
-                <Image
-                  src={logo}
-                  alt="logo"
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </a>
+              <Link href="/" passHref>
+                <div className="cursor-pointer relative w-40 h-20">
+                  <Image
+                    src={logo}
+                    alt="logo"
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </Link>
               <div
                 className="cursor-pointer md:hidden block"
                 onClick={() => setIsOpen(!isOpen)}
