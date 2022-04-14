@@ -20,7 +20,7 @@ const ImageWrapper = ({ image }: ImageWrapperProps) => {
           //   zoomMargin={300}
           isZoomed={isOpen}
         >
-          <div className={` w-96 h-96 px-16`}>
+          <div className={` w-96 h-96 md:px-8 lg:px-12 xl:px-16 px-1`}>
             <Image
               src={image}
               alt="JD"

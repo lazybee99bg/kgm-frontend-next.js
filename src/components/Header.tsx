@@ -84,13 +84,13 @@ const Header = () => {
       element: [],
     },
     {
-      title: "Liên hệ",
-      link: "/intro",
+      title: "Tuyển dụng",
+      link: "/careers",
       element: [],
     },
     {
-      title: "Tuyển dụng",
-      link: "/careers",
+      title: "Liên hệ",
+      link: "/intro",
       element: [],
     },
   ];

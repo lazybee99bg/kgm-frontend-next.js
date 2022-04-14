@@ -92,11 +92,11 @@ const Footer = () => {
               <div key={index} className="flex flex-col items-start px-5 py-10">
                 {/* title */}
                 <h3 className="flex flex-row items-center text-white mb-8">
-                  <span className="absolute text-7xl opacity-25">
+                  <span className="absolute text-7xl font-semibold opacity-25">
                     {item.title.charAt(0).toUpperCase()}
                   </span>
                   <span className="lg:text-lg text-base">
-                    &nbsp;&nbsp;&nbsp;{item.title}
+                    &nbsp;&nbsp;&nbsp;&nbsp;{item.title}
                   </span>
                 </h3>
                 {/* element */}
