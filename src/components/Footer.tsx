@@ -73,7 +73,7 @@ const Footer = () => {
         },
         {
           name: "Phone: 0243 209 1616",
-          link: "#",
+          link: "tel:+84-243-209-1616",
         },
         {
           name: "Facebook: https://facebook.com/govSOC",

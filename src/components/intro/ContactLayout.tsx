@@ -1,6 +1,5 @@
 import React from "react";
 import MovingDot from "../../common/MovingDot";
-// import { MailIcon } from "@heroicons/react/outline";
 import {
   MailIcon,
   LocationMarkerIcon,
@@ -8,7 +7,7 @@ import {
 } from "@heroicons/react/solid";
 
 const ContactLayout = () => {
-  const contactinfo = [
+  const contactInfo = [
     {
       Icon: <MailIcon className="w-8" />,
       title: "Thư điện tử :",
@@ -17,13 +16,21 @@ const ContactLayout = () => {
     {
       Icon: <LocationMarkerIcon className="w-8" />,
       title: "Địa chỉ :",
-      content:
-        "Tầng 16 Tòa nhà Cục tần số, 115 Trần Duy Hưng, Hà Nội, Việt Nam",
+      content: (
+        <a
+          href="https://goo.gl/maps/cA19Mnorb9XER9f1A"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Tầng 16 Tòa nhà Cục tần số, 115 Trần Duy Hưng, Hà Nội, Việt Nam
+        </a>
+      ),
+      // "Tầng 16 Tòa nhà Cục tần số, 115 Trần Duy Hưng, Hà Nội, Việt Nam",
     },
     {
       Icon: <PhoneIcon className="w-8" />,
       title: "Điện thoại hỗ trợ :",
-      content: "(+84) 24 3209 6789",
+      content: <a href="tel:+84-243-209-1616">(+84) 24 3209 6789</a>,
     },
   ];
 
@@ -34,7 +41,7 @@ const ContactLayout = () => {
         <MovingDot width={"w-24"} />
 
         <div className="grid md:grid-cols-3 grid-cols-1 gap-10 my-5">
-          {contactinfo.map((item, index) => (
+          {contactInfo.map((item, index) => (
             <div
               key={index}
               className="contact-info-box flex flex-col items-center justify-center px-10 h-64 bg-white text-center"
