@@ -1,0 +1,141 @@
+@use "variables";
+
+.home-content {
+  /*================================================
+Why Choose US CSS
+=================================================*/
+  .why-choose-us {
+    background: transparent url(../assets/images/banner-bg1.jpg) right top
+      no-repeat;
+    position: relative;
+    z-index: 1;
+
+    .section-title {
+      text-align: left;
+
+      .bar {
+        margin: {
+          left: 0;
+          right: 0;
+        }
+      }
+      p {
+        margin: {
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+  .why-choose-us-image {
+    position: relative;
+    text-align: center;
+
+    .main-pic {
+      display: none;
+    }
+    img {
+      &:nth-child(1) {
+        position: relative;
+        left: -20px;
+      }
+      &:nth-child(3) {
+        position: absolute;
+        top: -55px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        z-index: -1;
+      }
+    }
+    &.single-why-choose-us-image {
+      img {
+        display: block;
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  .col-lg-6 {
+    .col-lg-6 {
+      &:nth-child(1) {
+        .single-why-choose-us {
+          margin-top: 60px;
+        }
+      }
+      &:nth-child(2) {
+        .single-why-choose-us {
+          margin-top: 0;
+        }
+      }
+      &:nth-child(4) {
+        .single-why-choose-us {
+          margin-top: -30px;
+        }
+      }
+    }
+  }
+  .single-why-choose-us {
+    padding: 30px 15px;
+    border-radius: 5px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 0 30px rgba(56, 46, 46, 0.1);
+    transition: variables.$transition;
+    margin-top: 30px;
+
+    .icon {
+      color: variables.$primary-color;
+      transition: variables.$transition;
+
+      i {
+        &::before {
+          font-size: 45px;
+        }
+      }
+    }
+    h3 {
+      font-size: 18px;
+      margin: {
+        top: 15px;
+        bottom: 15px;
+      }
+      transition: variables.$transition;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      border-radius: 5px;
+      height: 100%;
+      background: variables.$gradient-color;
+      z-index: -1;
+      opacity: 0;
+      visibility: hidden;
+      transition: variables.$transition;
+    }
+    p {
+      transition: variables.$transition;
+    }
+    &:hover {
+      transform: translateY(-9px);
+      border-color: transparent;
+
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+      .icon {
+        color: white;
+      }
+      h3,
+      p {
+        color: white;
+      }
+    }
+  }
+}
