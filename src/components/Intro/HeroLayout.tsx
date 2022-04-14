@@ -1,6 +1,6 @@
+import React from "react";
 import { CheckIcon } from "@heroicons/react/solid";
 import Link from "next/link";
-import React from "react";
 import MovingDot from "../../common/MovingDot";
 
 const HeroLayout = () => {
@@ -31,14 +31,14 @@ const HeroLayout = () => {
               {element}
             </span>
           ))}
-          <a
-            className="text-xl text-blue-400 hover:text-blue-500"
-            href="https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=195397"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {"Tìm hiểu thêm"}
-          </a>
+          <div className="w-fit h-fit cursor-pointer text-xl text-blue-400 hover:text-blue-500">
+            <Link
+              href="https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=195397"
+              passHref
+            >
+              {"Tìm hiểu thêm"}
+            </Link>
+          </div>
         </div>
       </div>
     </div>
