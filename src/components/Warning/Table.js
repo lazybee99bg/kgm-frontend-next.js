@@ -6,12 +6,7 @@ import {
   useGlobalFilter,
   usePagination,
 } from "react-table";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-} from "@heroicons/react/outline";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import GlobalFilter from "./GlobalFilter";
 import SelectColumnFilter from "./SelectColumnFilter";
 import Button from "./Button";
@@ -25,7 +20,6 @@ const Table = ({ columns, data, tableFor }) => {
     prepareRow,
     page, // Instead of using 'rows', we'll use page,
     // which has only the rows for the active page
-
     // The rest of these things are super handy, too ;)
     canPreviousPage,
     canNextPage,
@@ -44,7 +38,7 @@ const Table = ({ columns, data, tableFor }) => {
     {
       columns,
       data,
-      initialState: { pageIndex: 0, hiddenColumns: "typeAlert" },
+      initialState: { hiddenColumns: "typeAlert" },
     },
     useFilters,
     useGlobalFilter,
