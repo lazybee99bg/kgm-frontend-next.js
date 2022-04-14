@@ -1,5 +1,4 @@
 import React from "react";
-// import "../../../styles/warning.module.scss";
 import {
   useTable,
   useSortBy,
@@ -86,30 +85,19 @@ const Table = ({ columns, data, tableFor }) => {
           {headerGroups.map((headerGroup) => (
             <tr key={""} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                // Add the sorting props to control sorting. For this example
+                // Add the sorting props to control sorting.
                 <th
+                  /* Add a sort direction indicator */
+                  className={`${
+                    column.isSorted &&
+                    (column.isSortedDesc
+                      ? "border-black border-t-4"
+                      : "border-black border-b-4")
+                  }`}
                   key={""}
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                 >
-                  <div>
-                    {/* Add a sort direction indicator */}
-                    <span>
-                      {column.isSorted ? (
-                        column.isSortedDesc ? (
-                          <>
-                            <ChevronDownIcon className="w-5 text-gray-500" />
-                          </>
-                        ) : (
-                          <>
-                            <ChevronUpIcon className="w-5 text-gray-500" />
-                          </>
-                        )
-                      ) : (
-                        <></>
-                      )}
-                    </span>
-                    {column.render("Header")}
-                  </div>
+                  <div>{column.render("Header")}</div>
                 </th>
               ))}
             </tr>

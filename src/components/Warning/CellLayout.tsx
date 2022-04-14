@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react";
-// import "../../../styles/warning.module.scss";
+import React from "react";
 import urlSlug from "url-slug";
-import Table from "./Table";
-import ApiNew, { BASE_URL_STRAPI } from "../../api/getNews";
+import { BASE_URL_STRAPI } from "../../api/getNews";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-import Image from "next/image";
 
-const TitleCell = ({ value }) => {
+type CellLayoutProps = {
+  value: any;
+};
+
+const getImageNews = (pathUrlImage: any) => {
+  return `${BASE_URL_STRAPI}${pathUrlImage}`;
+};
+
+const CellLayout = ({ value }: CellLayoutProps) => {
   return (
     <a
       href={`alert/${urlSlug(value[0])}.${value[1]}`}
@@ -88,30 +93,6 @@ const TitleCell = ({ value }) => {
                   {...props}
                 />
               ),
-              th: ({ node, ...props }) => (
-                <th
-                  style={{
-                    border: "solid 1px black",
-                    color: "rgb(41, 41, 41)",
-                  }}
-                  {...props}
-                />
-              ),
-              td: ({ node, ...props }) => (
-                <td
-                  style={{
-                    border: "solid 1px black",
-                    color: "rgb(41, 41, 41)",
-                  }}
-                  {...props}
-                />
-              ),
-
-              img: ({ node, ...props }) => (
-                <div className="w-full d-flex justify-content-center">
-                  <img {...props} />
-                </div>
-              ),
             }}
           >
             {value[3]}
@@ -142,71 +123,4 @@ const TitleCell = ({ value }) => {
   );
 };
 
-const getImageNews = (pathUrlImage) => {
-  return `${BASE_URL_STRAPI}${pathUrlImage}`;
-};
-
-const getDescription = (str) => {
-  var result = str;
-  result = result.replaceAll("**", "");
-  result = result.replaceAll("###", "");
-
-  return result.split(/\s+/).slice(0, 50).join(" ") + "...";
-};
-
-const TableWeekly = () => {
-  const [news, setNews] = useState([]);
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    ApiNew.get("alerts", {
-      params: {
-        sort: "createdAt:desc",
-        populate: "image",
-        "pagination[limit]": -1,
-      },
-    }).then((res) => {
-      console.log(res.data);
-      const resNews = res.data;
-      var mappedWarning = resNews.map((news) => ({
-        title: [
-          news.attributes.title,
-          news.id,
-          news?.attributes?.image?.data?.attributes?.url,
-          getDescription(news.attributes.content),
-          new Date(news.attributes.publishedAt).toLocaleDateString(),
-        ],
-        typeAlert: news.attributes.typeAlert,
-      }));
-      setNews(mappedWarning);
-      setLoaded(true);
-    });
-  }, []);
-
-  const columns = [
-    {
-      Header: "Cảnh báo",
-      accessor: "title",
-      Cell: TitleCell,
-    },
-    {
-      Header: "",
-      accessor: "typeAlert",
-    },
-  ];
-
-  return (
-    <div className="bg-gray-50">
-      <div className="container">
-        <h1 className="text-4xl font-bold py-10">Cảnh báo tuần</h1>
-        {loaded ? (
-          <Table columns={columns} data={news} tableFor="weekly" />
-        ) : (
-          <div>Đang tải...</div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default TableWeekly;
+export default CellLayout;
