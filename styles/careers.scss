@@ -29,19 +29,16 @@
     position: absolute;
     border-radius: 50%;
     top: 0;
-    right: 45px;
+    right: variables.$icon-view-size / 2;
     background: white;
-    width: 45px;
+    width: variables.$icon-view-size;
+    height: variables.$icon-view-size;
     text-align: center;
-    height: 45px;
     line-height: 42px;
     opacity: 0;
     transition: variables.$transition;
     visibility: hidden;
 
-    // svg {
-    //   width: 19px;
-    // }
     &:hover {
       background: variables.$primary-color;
       color: white;
@@ -55,18 +52,6 @@
     transition: variables.$transition;
     opacity: 0;
     visibility: hidden;
-
-    // h3 {
-    //   font-size: 18px;
-    //   margin-bottom: 15px;
-
-    //   a {
-    //     color: white;
-    //   }
-    // }
-    // p {
-    //   color: white;
-    // }
   }
   &:hover {
     .image-wrapper {
@@ -79,7 +64,7 @@
     .icon {
       opacity: 1;
       visibility: visible;
-      top: 45px;
+      top: variables.$icon-view-size / 2;
     }
     .works-content {
       opacity: 1;

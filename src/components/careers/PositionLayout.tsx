@@ -98,7 +98,7 @@ const PositionLayout = () => {
         {departments.map((department, index) => (
           <div key={index} className="w-full my-10 border-t-2">
             <h2 className="pt-5 pb-10 text-2xl font-bold">{department.name}</h2>
-            <div className="grid grid-cols-4 gap-10">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-cols-1 gap-10">
               {department.positions.map((position, index) => (
                 <div key={index}>
                   <div className="single-works">
@@ -130,12 +130,15 @@ const PositionLayout = () => {
                           Ứng tuyển ngay
                         </a>
                       </button> */}
-                      <Button href="mailto:ncsc@ais.gov.vn,nhansu@.ais.gov.vn">
+                      <Button
+                        className="hover:bg-primary-400 hover:text-white"
+                        href="mailto:ncsc@ais.gov.vn,nhansu@.ais.gov.vn"
+                      >
                         Ứng tuyển ngay
                       </Button>
                     </div>
                   </div>
-                  <h6>Vị trí : {position.name}</h6>
+                  <h6 className="font-semibold">Vị trí : {position.name}</h6>
                 </div>
               ))}
             </div>
