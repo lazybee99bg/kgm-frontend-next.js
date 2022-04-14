@@ -1,8 +1,12 @@
 import React from "react";
 
-// const { REACT_APP_DEVELOPMENT_URL, REACT_APP_PRODUCTION_URL } = process.env;
+// const REACT_APP_PRODUCTION_URL = process.env.REACT_APP_PRODUCTION_URL;
+// const REACT_APP_DEVELOPMENT_URL = process.env.REACT_APP_DEVELOPMENT_URL;
 const REACT_APP_PRODUCTION_URL = "https://khonggianmang.vn";
 const REACT_APP_DEVELOPMENT_URL = "https://staging.khonggianmang.vn";
+
+// console.log(process.env);
+
 // ss
 const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 const developmentMode =
