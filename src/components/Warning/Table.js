@@ -48,7 +48,7 @@ const Table = ({ columns, data, tableFor }) => {
 
   // Render the UI for your table
   return (
-    <div className="container-table">
+    <div className="container-table pb-14">
       <div className="w-full flex lg:flex-row flex-col-reverse items-center justify-between">
         <div className="lg:w-auto w-full">
           {tableFor === "weekly" && (
