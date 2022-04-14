@@ -1,10 +1,18 @@
 import React from "react";
-import Background from "./Background";
-import Images from "./ImportImages";
 import Button from "../../common/Button";
 import ImageWrapper from "./ImageWrapper";
+import Background from "./Background";
+import importAll from "../../common/importAll";
 
 const PositionLayout = () => {
+  const Images = importAll(
+    require.context(
+      "../../../assets/images/careers_2021",
+      false,
+      /\.(png|jpe?g|svg)$/
+    )
+  );
+
   const departments = [
     {
       name: "Phòng Kỹ thuật Nghiệp vụ",

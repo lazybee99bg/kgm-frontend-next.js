@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import Images from "./ImportImages";
 import { Controlled as Zoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
@@ -16,10 +15,7 @@ const ImageWrapper = ({ image }: ImageWrapperProps) => {
       }}
     >
       {isOpen && (
-        <Zoom
-          //   zoomMargin={300}
-          isZoomed={isOpen}
-        >
+        <Zoom isZoomed={isOpen}>
           <div className={` w-96 h-96 md:px-8 lg:px-12 xl:px-16 px-1`}>
             <Image
               src={image}
