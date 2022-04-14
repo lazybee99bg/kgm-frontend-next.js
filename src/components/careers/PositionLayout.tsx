@@ -1,10 +1,8 @@
-import Image from "next/image";
 import React from "react";
 import Background from "./Background";
-import logo from "../../../assets/images/careers_2021/1-01.jpg";
 import Images from "./ImportImages";
-import { EyeIcon } from "@heroicons/react/outline";
 import Button from "../../common/Button";
+import ImageWrapper from "./ImageWrapper";
 
 const PositionLayout = () => {
   const departments = [
@@ -92,7 +90,6 @@ const PositionLayout = () => {
 
   return (
     <div id="position-layout">
-      {/* <Background /> */}
       <div className="container">
         <h1 className="my-10 text-center text-4xl font-bold">TUYỂN DỤNG</h1>
         {departments.map((department, index) => (
@@ -102,34 +99,9 @@ const PositionLayout = () => {
               {department.positions.map((position, index) => (
                 <div key={index}>
                   <div className="single-works">
-                    <div className="relative image-wrapper">
-                      <Image
-                        src={position.image}
-                        alt="JD"
-                        layout="responsive"
-                        objectFit="contain"
-                      />
-                    </div>
-                    {/* <Viewer
-                                            visible={this.state.cv14}
-                                            onClose={() => { this.setState({ cv14: false }) }}
-                                            images={[{ src: 'assets/img/tuyendung-2021/14-01.jpg', alt: 'Sinh viên thực tập' }]}
-                                        /> */}
-                    <a
-                      // onClick={() => { this.setState({ cv14: true }) }}
-                      className="icon p-2"
-                    >
-                      <EyeIcon />
-                    </a>
+                    <ImageWrapper image={position.image} />
+
                     <div className="works-content">
-                      {/* <button type="button" className="btn btn-danger">
-                        <a
-                          href="mailto:ncsc@ais.gov.vn,nhansu@.ais.gov.vn"
-                          style={{ color: "white" }}
-                        >
-                          Ứng tuyển ngay
-                        </a>
-                      </button> */}
                       <Button
                         className="hover:bg-primary-400 hover:text-white"
                         href="mailto:ncsc@ais.gov.vn,nhansu@.ais.gov.vn"
@@ -145,6 +117,7 @@ const PositionLayout = () => {
           </div>
         ))}
       </div>
+      <Background />
     </div>
   );
 };

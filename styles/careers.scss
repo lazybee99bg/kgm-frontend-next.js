@@ -25,25 +25,6 @@
     opacity: 0;
     visibility: hidden;
   }
-  .icon {
-    position: absolute;
-    border-radius: 50%;
-    top: 0;
-    right: variables.$icon-view-size / 2;
-    background: white;
-    width: variables.$icon-view-size;
-    height: variables.$icon-view-size;
-    text-align: center;
-    line-height: 42px;
-    opacity: 0;
-    transition: variables.$transition;
-    visibility: hidden;
-
-    &:hover {
-      background: variables.$primary-color;
-      color: white;
-    }
-  }
   .works-content {
     position: absolute;
     bottom: -60px;
@@ -60,11 +41,6 @@
     &::before {
       opacity: 1;
       visibility: visible;
-    }
-    .icon {
-      opacity: 1;
-      visibility: visible;
-      top: variables.$icon-view-size / 2;
     }
     .works-content {
       opacity: 1;
