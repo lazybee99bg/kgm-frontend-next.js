@@ -1,12 +1,15 @@
-import Image from "next/image";
 import React, { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import logo from "../../assets/images/logo_NCSC.png";
 import Button from "../common/Button";
 import { MenuIcon } from "@heroicons/react/solid";
-import Link from "next/link";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
   const headerEl = [
     {
       title: "Trang chủ",
@@ -135,7 +138,12 @@ const Header = () => {
               {headerEl.map((item, index) => (
                 <div key={index} className="lg:m-5 my-5">
                   {item.link ? (
-                    <a href={item.link} className="hover:text-primary-400">
+                    <a
+                      href={item.link}
+                      className={`hover:text-primary-400 ${
+                        router.asPath == item.link ? "text-primary-500" : ""
+                      }`}
+                    >
                       {item.title}
                     </a>
                   ) : (
