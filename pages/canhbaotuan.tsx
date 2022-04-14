@@ -1,5 +1,5 @@
 import React from "react";
-import TableWeekly from "../src/components/warning/TableWeekly";
+import TableWeekly from "../src/components/Warning/TableWeekly";
 import LayoutPage from "../src/common/LayoutPage";
 // import "../styles/warning.module.scss";
 
