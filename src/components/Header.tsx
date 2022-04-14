@@ -102,13 +102,9 @@ const Header = () => {
       <header>
         <div className="w-full py-0.5 bg-gray-100 font-light text-left md:text-md text-xs text-gray-500 hover:text-red-500">
           <div className="container">
-            <a
-              href="https://mic.gov.vn/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://mic.gov.vn/">
               Bộ Thông tin và Truyền thông - Chương trình Chuyển đổi số Quốc gia
-            </a>
+            </Link>
           </div>
         </div>
         <div className="container">
@@ -138,14 +134,13 @@ const Header = () => {
               {headerEl.map((item, index) => (
                 <div key={index} className="lg:m-5 my-5">
                   {item.link ? (
-                    <a
-                      href={item.link}
+                    <div
                       className={`hover:text-primary-400 ${
                         router.asPath == item.link ? "text-primary-500" : ""
                       }`}
                     >
-                      {item.title}
-                    </a>
+                      <Link href={item.link}>{item.title}</Link>
+                    </div>
                   ) : (
                     <div className="dropdown">
                       <span className="hover:text-primary-400 cursor-pointer font-base flex items-center">
@@ -169,12 +164,9 @@ const Header = () => {
                         <ul className="">
                           {item.element.map((element, index) => (
                             <li key={index} className="mx-2 my-4">
-                              <a
-                                href={element.link}
-                                className="hover:text-primary-400"
-                              >
-                                {element.name}
-                              </a>
+                              <div className="hover:text-primary-400">
+                                <Link href={element.link}>{element.name}</Link>
+                              </div>
                             </li>
                           ))}
                         </ul>
