@@ -38,20 +38,20 @@ const NewsLayout = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <a
-          className="mb-2 cursor-pointer"
+          className="mb-2 text-justify cursor-pointer"
           title={pinnedNews?.attributes?.title}
           href={`news/${urlSlug(pinnedNews?.attributes?.title)}.${
             pinnedNews?.id
           }`}
         >
           <img
-            className="rounded-t mb-3 w-full h-96 object-cover"
+            className="rounded-t mb-3 w-full h-96 object-cover "
             alt="news"
             src={getImageNews(
               pinnedNews?.attributes?.image?.data?.attributes?.url
             )}
           />
-          <h4 className="font-bold">{pinnedNews?.attributes?.title}</h4>
+          <h4 className="font-bold ">{pinnedNews?.attributes?.title}</h4>
           <span>{pinnedNews?.attributes?.description}</span>
         </a>
         <div className="grid gap-4 xl:grid-cols-2 grid-cols-1 md:px-2">
@@ -60,7 +60,7 @@ const NewsLayout = () => {
               {item !== pinnedNews && (
                 <a
                   key={index}
-                  className="mb-2 cursor-pointer"
+                  className="mb-2 text-justify cursor-pointer"
                   title={item?.attributes.title}
                   href={`news/${urlSlug(item?.attributes.title)}.${item?.id}`}
                 >
@@ -70,7 +70,9 @@ const NewsLayout = () => {
                       item?.attributes?.image?.data?.attributes?.url
                     )}
                   />
-                  <span className="font-bold">{item?.attributes.title}</span>
+                  <span className="text-sm font-bold">
+                    {item?.attributes.title}
+                  </span>
                   {/* <p>
                 <i class="fas fa-calendar-alt mr-2"></i>
                 {moment(item?.attributes.createdAt).calendar()}

@@ -61,7 +61,7 @@ const AlertsLayout = () => {
                 />
               )}
 
-              <span className="font-bold">
+              <span className="text-sm text-justify font-bold">
                 {/* {sliceText(item.title, 40)}
                  */}
                 {item.attributes.title}

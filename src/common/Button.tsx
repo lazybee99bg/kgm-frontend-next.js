@@ -22,11 +22,13 @@ const Button = ({
   scrollTo,
   children,
 }: ButtonProps) => {
+  const baseClassName =
+    "transition duration-500 rounded bg-red-600 text-center text-white focus:ring-0 focus:outline-none";
   return (
     <>
       {href ? (
         <a
-          className={`transition duration-500 rounded bg-red-600 text-white focus:ring-0 focus:outline-none ${className} ${padding}`}
+          className={`${baseClassName} ${className} ${padding}`}
           href={href}
           target="_blank"
           rel="noreferrer"
@@ -39,7 +41,7 @@ const Button = ({
             <Link to={scrollTo} spy={true} smooth={true} offset={-40}>
               <button
                 type={type}
-                className={`transition duration-500 rounded bg-red-600 text-white focus:ring-0 focus:outline-none ${className} ${padding}`}
+                className={`${baseClassName} ${className} ${padding}`}
                 disabled={disabled}
                 onClick={() => {
                   if (onClick) onClick();
@@ -51,7 +53,7 @@ const Button = ({
           ) : (
             <button
               type={type}
-              className={`transition duration-500 rounded bg-red-600 text-white focus:ring-0 focus:outline-none ${className} ${padding}`}
+              className={`${baseClassName} ${className} ${padding}`}
               disabled={disabled}
               onClick={() => {
                 if (onClick) onClick();

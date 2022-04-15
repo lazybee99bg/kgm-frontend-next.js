@@ -131,11 +131,11 @@ const Header = () => {
               </div>
             </div>
             <div
-              className={`collapsible lg:p-6 p-2 flex lg:flex-row flex-col lg:items-center items-start justify-between font-semibold text-base text-primary-100 bg-white
+              className={`collapsible lg:p-6 p-2 flex lg:flex-row flex-col lg:items-center items-start justify-between font-semibold lg:text-base text-sm text-center text-primary-100 bg-white
               ${isOpen ? "lg:h-auto h-[560px]" : "h-0 lg:h-auto"}`}
             >
               {headerEl.map((item, index) => (
-                <div key={index} className="lg:m-5 my-5">
+                <div key={index} className="lg:mx-4 mx-1">
                   {item.link ? (
                     <div
                       className={`hover:text-primary-400 ${
