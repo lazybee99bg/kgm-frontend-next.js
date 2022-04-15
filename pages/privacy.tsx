@@ -1,7 +1,8 @@
+import { NextPage } from "next";
 import React from "react";
 import LayoutPage from "../src/common/LayoutPage";
 
-const privacy = () => {
+const privacy: NextPage = () => {
   return (
     <div>
       <LayoutPage>

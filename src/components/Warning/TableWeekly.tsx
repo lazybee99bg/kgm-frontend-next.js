@@ -23,7 +23,7 @@ const TableWeekly = () => {
         "pagination[limit]": -1,
       },
     }).then((res) => {
-      // console.log(res.data);
+      console.log("here", res);
       const resNews = res.data;
       var mappedWarning = resNews.map((news: any) => ({
         title: [

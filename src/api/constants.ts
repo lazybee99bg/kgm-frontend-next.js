@@ -14,9 +14,12 @@ const developmentMode =
   currentUrl.includes("127.0.0.1") ||
   currentUrl.includes("staging");
 
-const BASE_URL_STRAPI = developmentMode
-  ? REACT_APP_DEVELOPMENT_URL
-  : REACT_APP_PRODUCTION_URL;
+// const BASE_URL_STRAPI = developmentMode
+//   ? REACT_APP_DEVELOPMENT_URL
+//   : REACT_APP_PRODUCTION_URL;
+
+const BASE_URL_STRAPI = REACT_APP_PRODUCTION_URL;
+
 // remove in production
 if (REACT_APP_PRODUCTION_URL)
   if (currentUrl.includes(REACT_APP_PRODUCTION_URL)) {

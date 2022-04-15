@@ -101,3 +101,8 @@ a {
     background: #071d3d;
   }
 }
+
+.markdown code {
+  display: block;
+  white-space: pre-wrap;
+}
