@@ -102,8 +102,11 @@ const Header = () => {
       <header>
         <div className="w-full py-0.5 bg-gray-100 font-light text-left md:text-md text-xs text-gray-500 hover:text-red-500">
           <div className="container">
-            <Link href="https://mic.gov.vn/">
-              Bộ Thông tin và Truyền thông - Chương trình Chuyển đổi số Quốc gia
+            <Link href="https://mic.gov.vn/" passHref>
+              <a target="_blank" rel="noreferrer">
+                Bộ Thông tin và Truyền thông - Chương trình Chuyển đổi số Quốc
+                gia
+              </a>
             </Link>
           </div>
         </div>
@@ -139,7 +142,15 @@ const Header = () => {
                         router.asPath == item.link ? "text-primary-500" : ""
                       }`}
                     >
-                      <Link href={item.link}>{item.title}</Link>
+                      <Link href={item.link}>
+                        {item.link.includes("http") ? (
+                          <a target="_blank" rel="noreferrer">
+                            {item.title}
+                          </a>
+                        ) : (
+                          <a>{item.title}</a>
+                        )}
+                      </Link>
                     </div>
                   ) : (
                     <div className="dropdown">
@@ -165,7 +176,11 @@ const Header = () => {
                           {item.element.map((element, index) => (
                             <li key={index} className="mx-2 my-4">
                               <div className="hover:text-primary-400">
-                                <Link href={element.link}>{element.name}</Link>
+                                <Link href={element.link}>
+                                  <a target="_blank" rel="noreferrer">
+                                    {element.name}
+                                  </a>
+                                </Link>
                               </div>
                             </li>
                           ))}

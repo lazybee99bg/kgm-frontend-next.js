@@ -28,6 +28,8 @@ const Button = ({
         <a
           className={`transition duration-500 rounded bg-red-600 text-white focus:ring-0 focus:outline-none ${className} ${padding}`}
           href={href}
+          target="_blank"
+          rel="noreferrer"
         >
           <span>{children}</span>
         </a>

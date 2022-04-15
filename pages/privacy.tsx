@@ -4,7 +4,9 @@ import LayoutPage from "../src/common/LayoutPage";
 const privacy = () => {
   return (
     <div>
-      <LayoutPage>privacy</LayoutPage>
+      <LayoutPage>
+        <div className="container min-h-screen"></div>
+      </LayoutPage>
     </div>
   );
 };

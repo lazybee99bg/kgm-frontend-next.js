@@ -107,14 +107,29 @@ const Footer = () => {
                       className="flex flex-col py-2 font-normal lg:text-base text-sm text-primary-300"
                     >
                       {element.link ? (
-                        <a
-                          href={element.link}
-                          //   target="_blank"
-                          rel="noopener noreferrer"
-                          className="transition hover:translate-x-1 hover:text-white"
-                        >
-                          <span>{element.name}</span>
-                        </a>
+                        // <a
+                        //   href={element.link}
+                        //   //   target="_blank"
+                        //   rel="noopener noreferrer"
+                        //   className="transition hover:translate-x-1 hover:text-white"
+                        // >
+                        //   <span>{element.name}</span>
+                        // </a>
+                        <Link href={element.link}>
+                          {element.link.includes("http") ? (
+                            <a
+                              className="transition hover:translate-x-1 hover:text-white"
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {element.name}
+                            </a>
+                          ) : (
+                            <a className="transition hover:translate-x-1 hover:text-white">
+                              {element.name}
+                            </a>
+                          )}
+                        </Link>
                       ) : (
                         <span>{element.name}</span>
                       )}
