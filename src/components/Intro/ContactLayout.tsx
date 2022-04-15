@@ -18,7 +18,7 @@ const ContactLayout = () => {
       title: "Địa chỉ :",
       content: (
         <a
-          href="https://goo.gl/maps/cA19Mnorb9XER9f1A"
+          href="https://goo.gl/maps/5FjUSjRgkp1gN9Hr5"
           target="_blank"
           rel="noopener noreferrer"
         >
