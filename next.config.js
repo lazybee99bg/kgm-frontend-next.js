@@ -6,6 +6,9 @@ const nextConfig = {
       "tinnhiemmang.vn",
       "staging.khonggianmang.vn",
       "khonggianmang.vn",
+      "staging.khonggianmang.vnundefined",
+      "api-staging.khonggianmang.vn",
+      "api-staging.khonggianmang.vnundefined",
     ],
   },
 };

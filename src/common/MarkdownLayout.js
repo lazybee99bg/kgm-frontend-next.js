@@ -23,6 +23,9 @@ const MarkdownLayout = ({ children }) => {
               {...props}
             />
           ),
+          a: ({ node, ...props }) => (
+            <a className="text-blue-400 hover:text-blue-500" {...props} />
+          ),
           table: ({ node, ...props }) => (
             <table
               style={{
@@ -82,7 +85,7 @@ const MarkdownLayout = ({ children }) => {
           ),
 
           img: ({ node, ...props }) => (
-            <div className="w-full d-flex justify-content-center">
+            <div className="w-full flex justify-center">
               <img {...props} />
             </div>
           ),

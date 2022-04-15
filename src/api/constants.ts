@@ -25,4 +25,6 @@ if (REACT_APP_PRODUCTION_URL)
   if (currentUrl.includes(REACT_APP_PRODUCTION_URL)) {
     console.log = () => {}; // remove console in production
   }
-export default BASE_URL_STRAPI;
+export default BASE_URL_STRAPI.includes("staging")
+  ? BASE_URL_STRAPI.replace(/^https:\/\//, "https://" + "api-")
+  : BASE_URL_STRAPI.replace(/^https:\/\//, "https://" + "api.");

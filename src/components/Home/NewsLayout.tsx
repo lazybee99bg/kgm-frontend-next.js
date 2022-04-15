@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ApiNew, { BASE_URL_STRAPI } from "../../api/getNews";
 import urlSlug from "url-slug";
+import Image from "next/image";
 const NewsLayout = () => {
   const [news, setNews] = useState<any>([]);
   const [pinnedNews, setPinnedNews] = useState<any>({});
@@ -13,7 +14,6 @@ const NewsLayout = () => {
         "pagination[limit]": 5,
       },
     }).then((res) => {
-      // console.log("here", res.data);
       setPinnedNews(res.data[0]);
       for (let index = 0; index < res.data.length; index++) {
         const element = res.data[index];
@@ -22,9 +22,6 @@ const NewsLayout = () => {
           break;
         }
       }
-
-      // res.data.shift();
-      // console.log(res.data);
       setNews(res.data);
     });
   }, []);
@@ -44,9 +41,19 @@ const NewsLayout = () => {
             pinnedNews?.id
           }`}
         >
-          <img
+          {/* <img
             className="rounded-t mb-3 w-full h-96 object-cover "
             alt="news"
+            src={getImageNews(
+              pinnedNews?.attributes?.image?.data?.attributes?.url
+            )}
+          /> */}
+          <Image
+            className="rounded-t mb-1"
+            width={720}
+            height={420}
+            alt="Loading.."
+            objectFit="cover"
             src={getImageNews(
               pinnedNews?.attributes?.image?.data?.attributes?.url
             )}
@@ -54,18 +61,28 @@ const NewsLayout = () => {
           <h4 className="font-bold ">{pinnedNews?.attributes?.title}</h4>
           <span>{pinnedNews?.attributes?.description}</span>
         </a>
-        <div className="grid gap-4 xl:grid-cols-2 grid-cols-1 md:px-2">
+        <div className="grid gap-4 md:grid-cols-2 grid-cols-1 md:px-2">
           {news.map((item: any, index: React.Key | null | undefined) => (
             <>
               {item !== pinnedNews && (
                 <a
                   key={index}
-                  className="mb-2 text-justify cursor-pointer"
+                  className="flex flex-col mb-2 text-justify cursor-pointer"
                   title={item?.attributes.title}
                   href={`news/${urlSlug(item?.attributes.title)}.${item?.id}`}
                 >
-                  <img
-                    className="rounded-lg mb-1 w-96 h-48 object-cover"
+                  {/* <img
+                    className="rounded mb-1 w-96 h-48 object-cover"
+                    src={getImageNews(
+                      item?.attributes?.image?.data?.attributes?.url
+                    )}
+                  /> */}
+                  <Image
+                    className="rounded mb-1"
+                    width={320}
+                    height={200}
+                    alt="Loading.."
+                    objectFit="cover"
                     src={getImageNews(
                       item?.attributes?.image?.data?.attributes?.url
                     )}

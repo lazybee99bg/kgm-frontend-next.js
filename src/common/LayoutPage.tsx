@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 type LayoutPageProps = {
   children?: React.ReactNode;
-  title?: string;
+  title?: any;
 };
 const LayoutPage = ({ children, title }: LayoutPageProps) => {
   return (
