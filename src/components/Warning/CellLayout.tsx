@@ -43,7 +43,7 @@ const CellLayout = ({ value }: CellLayoutProps) => {
       </div>
       {value[2] ? (
         <img
-          className="rounded-sm w-56 h-36 sm:block hidden object-cover"
+          className="rounded w-56 h-36 sm:block hidden object-cover"
           alt="Loading.."
           src={getImageNews(value[2])}
         />
