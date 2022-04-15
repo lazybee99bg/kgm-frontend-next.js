@@ -36,6 +36,30 @@ const AboutUs = () => {
       title: "Hệ thống phân tích và chia sẻ nguy cơ tấn công mạng",
     },
   ];
+  const card1 = [
+    {
+      link: "https://bugbounty.vn",
+      content: "flaticon-team",
+      title: "Hệ thống Bug Bounty & Vulnerability Disclosure",
+    },
+    {
+      link: "https://service.khonggianmang.vn",
+      content: "flaticon-shield",
+      title: "Hệ thống cảnh báo điểm yếu và rà soát lỗ hổng bảo mật tự động",
+    },
+  ];
+  const card2 = [
+    {
+      link: "https://tinnhiemmang.vn",
+      content: "flaticon-rocket",
+      title: "Hệ thống gắn nhãn Website Tín nhiệm mạng",
+    },
+    {
+      link: "https://cti.soc.gov.vn",
+      content: "flaticon-diamond",
+      title: "Hệ thống phân tích và chia sẻ nguy cơ tấn công mạng",
+    },
+  ];
 
   return (
     <div className="home-content bg-white">
@@ -90,23 +114,43 @@ const AboutUs = () => {
                 alt="image"
               />
             </div>
-            <div className="grid sm:grid-cols-2 grid-cols-1 auto-cols-max gap-10">
-              {cards.map((card, index) => (
-                <Link key={index} href={card.link} passHref>
-                  <a
-                    className="cursor-pointer sm:w-64 w-auto"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="single-about-us h-56">
-                      <div className="icon">
-                        <i className={card.content} />
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-14">
+              <div className="mt-20 grid grid-cols-1">
+                {card1.map((card, index) => (
+                  <Link key={index} href={card.link} passHref>
+                    <a
+                      className="cursor-pointer sm:w-56 w-auto"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <div className="single-about-us h-56">
+                        <div className="icon">
+                          <i className={card.content} />
+                        </div>
+                        <h3>{card.title}</h3>
                       </div>
-                      <h3>{card.title}</h3>
-                    </div>
-                  </a>
-                </Link>
-              ))}
+                    </a>
+                  </Link>
+                ))}
+              </div>
+              <div className="mb-20 grid grid-cols-1">
+                {card2.map((card, index) => (
+                  <Link key={index} href={card.link} passHref>
+                    <a
+                      className="cursor-pointer sm:w-56 w-auto"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <div className="single-about-us h-56">
+                        <div className="icon">
+                          <i className={card.content} />
+                        </div>
+                        <h3>{card.title}</h3>
+                      </div>
+                    </a>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
