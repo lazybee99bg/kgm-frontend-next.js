@@ -88,7 +88,7 @@ const MarkdownLayout = ({ children }) => {
           ),
         }}
       >
-        {dataNews.content}
+        {children}
       </ReactMarkdown>
     </div>
   );
