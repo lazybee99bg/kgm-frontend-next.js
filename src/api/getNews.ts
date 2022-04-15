@@ -4,7 +4,11 @@ import BASE_URL_STRAPI from "./constants";
 //Token read only
 // const TOKEN =
 const apiNews = axios.create({
-  baseURL: `${BASE_URL_STRAPI.replace(/^https:\/\//, "https://" + "api.")}`,
+  baseURL: `${
+    BASE_URL_STRAPI.includes("staging")
+      ? BASE_URL_STRAPI.replace(/^https:\/\//, "https://" + "api-")
+      : BASE_URL_STRAPI.replace(/^https:\/\//, "https://" + "api.")
+  }`,
 });
 // console.log("here", BASE_URL_STRAPI);
 
