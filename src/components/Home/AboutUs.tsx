@@ -49,7 +49,7 @@ const AboutUs = () => {
               </h2>
               <MovingDot width={"w-24 my-4"} />
             </div>
-            <p className="text-xl font-semibold text-left">
+            <p className="text-xl font-semibold text-justify">
               Trung tâm Giám sát an toàn không gian mạng quốc gia (National
               Cyber Security Center - NCSC) có chức năng giám sát trung tâm, là
               đầu mối kỹ thuật về giám sát, hỗ trợ bảo đảm ATTT cho người dân,
@@ -58,7 +58,7 @@ const AboutUs = () => {
             </p>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4 my-2">
               {quotes.map((quote, index) => (
-                <span key={index} className="text-sm font-normal text-left ">
+                <span key={index} className="text-sm font-normal text-justify ">
                   <CheckIcon className="w-6 text-green-500 inline-block" />
                   {quote}
                 </span>
