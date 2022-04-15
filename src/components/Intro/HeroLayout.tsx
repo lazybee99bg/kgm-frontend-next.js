@@ -31,14 +31,18 @@ const HeroLayout = () => {
               {element}
             </span>
           ))}
-          <div className="w-fit h-fit cursor-pointer text-xl text-blue-400 hover:text-blue-500">
-            <Link
-              href="https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=195397"
-              passHref
+          <Link
+            href="https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=195397"
+            passHref
+          >
+            <a
+              target="_blank"
+              rel="noreferrer"
+              className="w-fit h-fit cursor-pointer text-xl text-blue-400 hover:text-blue-500"
             >
               {"Tìm hiểu thêm"}
-            </Link>
-          </div>
+            </a>
+          </Link>
         </div>
       </div>
     </div>

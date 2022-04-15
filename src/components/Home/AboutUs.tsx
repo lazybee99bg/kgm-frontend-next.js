@@ -63,14 +63,18 @@ const AboutUs = () => {
                   {quote}
                 </span>
               ))}
-              <div className="w-fit h-fit cursor-pointer text-xl text-blue-400 hover:text-blue-500">
-                <Link
-                  href="https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=195397"
-                  passHref
+              <Link
+                href="https://vanban.chinhphu.vn/default.aspx?pageid=27160&docid=195397"
+                passHref
+              >
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-fit h-fit cursor-pointer text-xl text-blue-400 hover:text-blue-500"
                 >
                   {"Tìm hiểu thêm"}
-                </Link>
-              </div>
+                </a>
+              </Link>
             </div>
           </section>
           {/* End AboutUs */}
@@ -88,16 +92,20 @@ const AboutUs = () => {
             </div>
             <div className="grid sm:grid-cols-2 grid-cols-1 auto-cols-max gap-10">
               {cards.map((card, index) => (
-                <div className={`cursor-pointer sm:w-64 w-auto`} key={index}>
-                  <Link href={card.link} passHref>
+                <Link key={index} href={card.link} passHref>
+                  <a
+                    className="cursor-pointer sm:w-64 w-auto"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <div className="single-about-us h-56">
                       <div className="icon">
                         <i className={card.content} />
                       </div>
                       <h3>{card.title}</h3>
                     </div>
-                  </Link>
-                </div>
+                  </a>
+                </Link>
               ))}
             </div>
           </div>
