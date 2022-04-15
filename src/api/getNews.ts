@@ -8,7 +8,7 @@ const apiNews = axios.create({
     BASE_URL_STRAPI.includes("staging")
       ? BASE_URL_STRAPI.replace(/^https:\/\//, "https://" + "api-")
       : BASE_URL_STRAPI.replace(/^https:\/\//, "https://" + "api.")
-  }`,
+  }/api`,
 });
 // console.log("here", BASE_URL_STRAPI);
 
