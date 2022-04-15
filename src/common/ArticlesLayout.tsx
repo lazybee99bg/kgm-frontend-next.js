@@ -37,7 +37,6 @@ const ArticlesLayout = ({ articlesSlug, articlesApi }: ArticlesLayoutProps) => {
       const _articles = responseArticles.data.attributes;
       setArticles(_articles);
       document.title = _articles.title;
-      // console.log(_dataNews);
       const responseSuggestArticles = await ApiNew.get(`${articlesApi}`, {
         params: {
           populate: "image",

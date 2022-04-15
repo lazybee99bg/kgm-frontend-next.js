@@ -7,7 +7,6 @@ import BASE_URL_STRAPI from "./constants";
 const apiNews = axios.create({
   baseURL: `${BASE_URL_STRAPI}/api`,
 });
-// console.log("here", BASE_URL_STRAPI);
 
 apiNews.interceptors.response.use(
   (response: { data: any }) => {

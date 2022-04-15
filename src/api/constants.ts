@@ -1,30 +1,26 @@
-import React from "react";
-
 // const REACT_APP_PRODUCTION_URL = process.env.REACT_APP_PRODUCTION_URL;
 // const REACT_APP_DEVELOPMENT_URL = process.env.REACT_APP_DEVELOPMENT_URL;
 const REACT_APP_PRODUCTION_URL = "https://khonggianmang.vn";
 const REACT_APP_DEVELOPMENT_URL = "https://staging.khonggianmang.vn";
 
-// console.log(process.env);
-
-// ss
 const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 const developmentMode =
   currentUrl.includes("localhost") ||
   currentUrl.includes("127.0.0.1") ||
   currentUrl.includes("staging");
 
-const BASE_URL_STRAPI = developmentMode
+const URL = developmentMode
   ? REACT_APP_DEVELOPMENT_URL
   : REACT_APP_PRODUCTION_URL;
-
-// const BASE_URL_STRAPI = REACT_APP_PRODUCTION_URL;
 
 // remove in production
 if (REACT_APP_PRODUCTION_URL)
   if (currentUrl.includes(REACT_APP_PRODUCTION_URL)) {
     console.log = () => {}; // remove console in production
   }
-export default BASE_URL_STRAPI.includes("staging")
-  ? BASE_URL_STRAPI.replace(/^https:\/\//, "https://" + "api-")
-  : BASE_URL_STRAPI.replace(/^https:\/\//, "https://" + "api.");
+
+const BASE_URL_STRAPI = URL.includes("staging")
+  ? URL.replace(/^https:\/\//, "https://" + "api-")
+  : URL.replace(/^https:\/\//, "https://" + "api.");
+
+export default BASE_URL_STRAPI;

@@ -9,7 +9,6 @@ import NewsLayout from "../src/components/Home/NewsLayout";
 import Partners from "../src/components/Home/Partners";
 
 const home: NextPage = () => {
-  // console.log(process.env);
   return (
     <LayoutPage title="">
       <NewsLayout />
