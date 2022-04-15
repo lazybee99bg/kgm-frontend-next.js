@@ -98,7 +98,7 @@ const Header = () => {
     },
   ];
   return (
-    <div className="header bg-white">
+    <div id="header-top" className="header bg-white">
       <header>
         <div className="w-full py-0.5 bg-gray-100 font-light text-left md:text-md text-xs text-gray-500 hover:text-red-500">
           <div className="container">

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo_NCSC_white.png";
+import BackToTop from "./BackToTop";
 
 const Footer = () => {
   const footerEl = [
@@ -176,6 +176,7 @@ const Footer = () => {
         </div>
       </footer>
       {/* End Footer Area */}
+      <BackToTop />
     </div>
   );
 };
