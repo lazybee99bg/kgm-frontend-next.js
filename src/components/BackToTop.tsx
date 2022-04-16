@@ -18,8 +18,9 @@ const BackToTop = () => {
   return (
     <div
       className={`
-      transition duration-500 cursor-pointer w-12 p-2 z-50 fixed bottom-10 right-10 rounded-full bg-primary-400 text-white
-      ${visible ? "opacity-100 visible" : "opacity-0 invisible"}
+      w-12 p-2 z-50 fixed bottom-20 right-14 rounded-full bg-primary-400 text-white 
+      transition duration-500 cursor-pointer hover:opacity-100
+      ${visible ? "opacity-50 scale-100" : "opacity-0 scale-0"}
     `}
     >
       <Link to={"header-top"} spy={true} smooth={true} offset={-40}>
