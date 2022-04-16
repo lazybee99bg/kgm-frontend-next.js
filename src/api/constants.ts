@@ -7,6 +7,7 @@ const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 const developmentMode =
   currentUrl.includes("localhost") ||
   currentUrl.includes("127.0.0.1") ||
+  currentUrl.includes("vercel") ||
   currentUrl.includes("staging");
 
 const URL = developmentMode
