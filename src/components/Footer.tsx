@@ -95,8 +95,8 @@ const Footer = () => {
                   <span className="absolute text-7xl font-medium opacity-25">
                     {item.title.charAt(0).toUpperCase()}
                   </span>
-                  <span className="lg:text-lg text-base">
-                    &nbsp;&nbsp;&nbsp;&nbsp;{item.title}
+                  <span className="lg:text-xl text-base">
+                    &nbsp;&nbsp;&nbsp;{item.title}
                   </span>
                 </h3>
                 {/* element */}
