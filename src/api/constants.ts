@@ -11,8 +11,8 @@ const developmentMode =
   currentUrl.includes("staging");
 
 const URL = developmentMode
-  ? REACT_APP_DEVELOPMENT_URL
-  : REACT_APP_PRODUCTION_URL;
+  ? REACT_APP_DEVELOPMENT_URL.replace(/^https:\/\//, "https://" + "api-")
+  : REACT_APP_PRODUCTION_URL.replace(/^https:\/\//, "https://" + "api.");
 
 // remove in production
 if (REACT_APP_PRODUCTION_URL)
@@ -20,8 +20,6 @@ if (REACT_APP_PRODUCTION_URL)
     console.log = () => {}; // remove console in production
   }
 
-const BASE_URL_STRAPI = URL.includes("staging")
-  ? URL.replace(/^https:\/\//, "https://" + "api-")
-  : URL.replace(/^https:\/\//, "https://" + "api.");
+const BASE_URL_STRAPI = URL;
 
 export default BASE_URL_STRAPI;

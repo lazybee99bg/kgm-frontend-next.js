@@ -47,16 +47,18 @@ a {
     top: -(variables.$dot-size / 4);
     width: variables.$dot-size;
     height: variables.$dot-size;
-    animation: move_left 5s;
-    animation-iteration-count: infinite;
+    animation: move_left 4s infinite linear;
   }
 
   @keyframes move_left {
-    from {
+    0% {
       left: 0;
     }
-    to {
+    90% {
       left: calc(100% - variables.$dot-size);
+    }
+    100% {
+      left: 0;
     }
   }
 }
