@@ -82,7 +82,7 @@ const ArticlesLayout = ({ articlesSlug, articlesApi }: ArticlesLayoutProps) => {
           </div>
           <div className="">
             <h3 className="mb-6 text-left text-4xl font-bold">Tin liên quan</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 grid-cols-1 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 grid-cols-1 gap-4 max-h-screen overflow-y-scroll">
               {suggestArticles.map(
                 (item: any, index: React.Key | null | undefined) => (
                   <a

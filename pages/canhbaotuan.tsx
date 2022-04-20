@@ -7,7 +7,11 @@ import LayoutPage from "../src/common/LayoutPage";
 const WeeklyWarning: NextPage = () => {
   return (
     <>
-      <LayoutPage title="">
+      <LayoutPage
+        title={
+          "Cảnh báo An toàn thông tin | Trung tâm Giám sát an toàn không gian mạng quốc gia - National Cyber Security Center (NCSC)"
+        }
+      >
         <TableWeekly />
       </LayoutPage>
     </>

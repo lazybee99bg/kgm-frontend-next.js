@@ -7,7 +7,11 @@ import HeroLayout from "../src/components/Intro/HeroLayout";
 const intro: NextPage = () => {
   return (
     <div>
-      <LayoutPage>
+      <LayoutPage
+        title={
+          "Liên hệ | Trung tâm Giám sát an toàn không gian mạng quốc gia - National Cyber Security Center (NCSC)"
+        }
+      >
         <HeroLayout />
         <ContactLayout />
       </LayoutPage>

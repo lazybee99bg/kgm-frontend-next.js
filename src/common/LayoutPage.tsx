@@ -11,7 +11,10 @@ const LayoutPage = ({ children, title }: LayoutPageProps) => {
   return (
     <div>
       <Head>
-        <title>{title || "An toàn trên không gian mạng"}</title>
+        <title>
+          {title ||
+            "An toàn trên không gian mạng - khonggianmang.vn - Trung tâm Giám sát an toàn không gian mạng quốc gia - National Cyber Security Center (NCSC)"}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
