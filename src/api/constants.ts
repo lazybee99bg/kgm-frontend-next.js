@@ -12,7 +12,7 @@ const developmentMode =
 
 const URL = developmentMode
   ? REACT_APP_DEVELOPMENT_URL.replace(/^https:\/\//, "https://" + "api-")
-  : REACT_APP_PRODUCTION_URL.replace(/^https:\/\//, "https://" + "api.");
+  : REACT_APP_PRODUCTION_URL;
 
 // remove in production
 if (REACT_APP_PRODUCTION_URL)

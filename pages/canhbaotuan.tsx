@@ -2,9 +2,9 @@ import React from "react";
 import { NextPage } from "next";
 import TableWeekly from "../src/components/Warning/TableWeekly";
 import LayoutPage from "../src/common/LayoutPage";
-// import "../styles/warning.module.scss";
+import apiNews from "../src/api/getNews";
 
-const WeeklyWarning: NextPage = () => {
+const WeeklyWarning: NextPage = (props: any) => {
   return (
     <>
       <LayoutPage
@@ -12,10 +12,24 @@ const WeeklyWarning: NextPage = () => {
           "Cảnh báo An toàn thông tin | Trung tâm Giám sát an toàn không gian mạng quốc gia - National Cyber Security Center (NCSC)"
         }
       >
-        <TableWeekly />
+        <TableWeekly data={props.data} />
       </LayoutPage>
     </>
   );
+};
+
+export const getStaticProps = async () => {
+  const res = await apiNews.get("alerts", {
+    params: {
+      sort: "createdAt:desc",
+      populate: "image",
+      "pagination[limit]": -1,
+    },
+  });
+
+  return {
+    props: { data: res.data },
+  };
 };
 
 export default WeeklyWarning;

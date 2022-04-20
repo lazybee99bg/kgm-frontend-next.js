@@ -2,29 +2,25 @@ import React, { useEffect, useState } from "react";
 import ApiNew, { BASE_URL_STRAPI } from "../../api/getNews";
 import urlSlug from "url-slug";
 import Image from "next/image";
-const NewsLayout = () => {
+
+type NewsLayoutProps = {
+  data: any;
+};
+
+const NewsLayout = ({ data }: NewsLayoutProps) => {
   const [news, setNews] = useState<any>([]);
   const [pinnedNews, setPinnedNews] = useState<any>({});
   useEffect(() => {
-    ApiNew.get("news-p", {
-      params: {
-        sort: "createdAt:desc",
-        populate: "image",
-        fields: "title,createdAt,pinned,description,category",
-        "pagination[limit]": 5,
-      },
-    }).then((res) => {
-      setPinnedNews(res.data[0]);
-      for (let index = 0; index < res.data.length; index++) {
-        const element = res.data[index];
-        if (element.attributes.pinned) {
-          setPinnedNews(element);
-          break;
-        }
+    setPinnedNews(data[0]);
+    for (let index = 0; index < data.length; index++) {
+      const element = data[index];
+      if (element.attributes.pinned) {
+        setPinnedNews(element);
+        break;
       }
-      setNews(res.data);
-    });
-  }, []);
+    }
+    setNews(data);
+  }, [data]);
   const getImageNews = (pathUrlImage: any) => {
     return `${BASE_URL_STRAPI}${pathUrlImage}`;
   };

@@ -1,22 +1,18 @@
 import React, { useEffect, useState } from "react";
-import ApiNew, { BASE_URL_STRAPI } from "../../api/getNews";
+import { BASE_URL_STRAPI } from "../../api/getNews";
 import imgDefault from "../../../assets/images/news-security.jpg";
 import urlSlug from "url-slug";
 import Image from "next/image";
-const AlertsLayout = () => {
+
+type NewsLayoutProps = {
+  data: any;
+};
+
+const AlertsLayout = ({ data }: NewsLayoutProps) => {
   const [news, setNews] = useState([]);
   useEffect(() => {
-    ApiNew.get("alerts", {
-      params: {
-        sort: "createdAt:desc",
-        populate: "image",
-        fields: "title,createdAt",
-        "pagination[limit]": 4,
-      },
-    }).then((res) => {
-      setNews(res.data);
-    });
-  }, []);
+    setNews(data);
+  }, [data]);
   const getImageNews = (pathUrlImage: any) => {
     return `${BASE_URL_STRAPI}${pathUrlImage}`;
   };
