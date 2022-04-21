@@ -18,7 +18,7 @@ const WeeklyWarning: NextPage = (props: any) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await apiNews.get("alerts", {
     params: {
       sort: "createdAt:desc",

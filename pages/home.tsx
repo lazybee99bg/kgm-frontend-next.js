@@ -20,7 +20,7 @@ const home: NextPage = (props: any) => {
     </LayoutPage>
   );
 };
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const resAlerts = await apiNews.get("alerts", {
     params: {
       sort: "createdAt:desc",
