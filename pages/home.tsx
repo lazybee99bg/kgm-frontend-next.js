@@ -41,6 +41,7 @@ export const getStaticProps = async () => {
 
   return {
     props: { dataNews: resNews.data, dataAlerts: resAlerts.data },
+    revalidate: 10, // In seconds
   };
 };
 
