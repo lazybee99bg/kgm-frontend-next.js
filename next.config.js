@@ -2,7 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    loader: "imgix",
+    loader: "akamai",
+    path: "",
     domains: [
       "tinnhiemmang.vn",
       "staging.khonggianmang.vn",
