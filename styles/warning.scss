@@ -91,7 +91,7 @@
     }
     table tbody tr td {
       padding-left: 30%;
-      margin-bottom: 24px;
+      margin-bottom: 10px;
     }
     table tbody tr td:last-child {
       margin-bottom: 0;
@@ -99,7 +99,7 @@
     table tbody tr td:before {
       font-family: OpenSans-Regular;
       font-size: 14px;
-      color: #999999;
+      color: #222;
       line-height: 1.2;
       font-weight: unset;
       position: absolute;
@@ -108,35 +108,42 @@
       top: 0;
     }
     .cve tbody tr td:nth-child(1):before {
-      content: "CVE";
+      content: "TT";
     }
     .cve tbody tr td:nth-child(2):before {
-      content: "Vendor/Project";
+      content: "Mã lỗi quốc tế/Tên lỗ hổng";
     }
     .cve tbody tr td:nth-child(3):before {
-      content: "Product";
+      content: "Điểm CVSS version 3.x";
     }
     .cve tbody tr td:nth-child(4):before {
-      content: "Vulnerability Name";
+      content: "Sản phẩm/Dịch vụ";
     }
     .cve tbody tr td:nth-child(5):before {
-      content: "Date Added to Catalog";
+      content: "Mô tả ngắn";
     }
     .cve tbody tr td:nth-child(6):before {
-      content: "Short Description";
+      content: "";
     }
     .cve tbody tr td:nth-child(7):before {
-      content: "Action";
+      content: "";
     }
     .cve tbody tr td:nth-child(8):before {
-      content: "Due Date";
+      content: "";
     }
     .cve tbody tr td:nth-child(9):before {
-      content: "Note";
+      content: "";
     }
     /* table tbody tr td */
-    .weekly tbody td {
-      padding: 10px;
+    tbody td {
+      padding: 1px;
+      // border-top: 1px solid #ccc;
+    }
+    tr:nth-child(even) td {
+      border-bottom: 1px solid #fff;
+    }
+    tr:nth-child(odd) td {
+      border-bottom: 1px solid #ccc;
     }
 
     tbody tr {

@@ -5,7 +5,6 @@ import "../styles/careers.scss";
 import "../styles/home.scss";
 import "../styles/flat_icon.scss";
 import type { AppProps } from "next/app";
-import Script from "next/script";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {

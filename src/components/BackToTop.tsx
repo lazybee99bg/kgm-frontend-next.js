@@ -19,7 +19,7 @@ const BackToTop = () => {
     <div
       className={`
       w-12 p-2 z-50 fixed sm:bottom-20 sm:right-20 bottom-10 right-10 rounded-full bg-primary-400 text-white 
-      transition duration-500 cursor-pointer hover:opacity-100
+      transition duration-500 delay-300 cursor-pointer hover:opacity-100
       ${visible ? "opacity-50 scale-100" : "opacity-0 scale-0"}
     `}
     >

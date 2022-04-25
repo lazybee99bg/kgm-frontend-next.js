@@ -78,8 +78,17 @@ const Header = () => {
     },
     {
       title: "Cảnh báo ATTT",
-      link: "/canhbaotuan",
-      element: [],
+      link: "",
+      element: [
+        {
+          name: "Cảnh báo tuần",
+          link: "/canhbaotuan",
+        },
+        {
+          name: "Lỗ hổng đang bị khai thác",
+          link: "/lohong",
+        },
+      ],
     },
     {
       title: "Blog",
@@ -172,14 +181,18 @@ const Header = () => {
                         </svg>
                       </span>
                       <div className="dropdown-menu invisible translate-y-4 absolute z-10 w-56 rounded shadow bg-white">
-                        <ul className="">
+                        <ul className="text-left">
                           {item.element.map((element, index) => (
                             <li key={index} className="mx-2 my-4">
                               <div className="hover:text-primary-400">
                                 <Link href={element.link}>
-                                  <a target="_blank" rel="noreferrer">
-                                    {element.name}
-                                  </a>
+                                  {element.link.includes("http") ? (
+                                    <a target="_blank" rel="noreferrer">
+                                      {element.name}
+                                    </a>
+                                  ) : (
+                                    <a>{element.name}</a>
+                                  )}
                                 </Link>
                               </div>
                             </li>

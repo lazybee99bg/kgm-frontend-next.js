@@ -10,6 +10,11 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
 import GlobalFilter from "./GlobalFilter";
 import SelectColumnFilter from "./SelectColumnFilter";
 import Button from "./Button";
+import {
+  ArrowSmDownIcon,
+  ArrowSmUpIcon,
+  SwitchVerticalIcon,
+} from "@heroicons/react/solid";
 
 const Table = ({ columns, data, tableFor }) => {
   // Use the state and functions returned from useTable to build your UI
@@ -50,7 +55,7 @@ const Table = ({ columns, data, tableFor }) => {
   return (
     <div className="container-table pb-14">
       <div className="w-full flex lg:flex-row flex-col-reverse items-center justify-between">
-        <div className="lg:w-auto w-full">
+        <div className="lg:w-auto w-full mb-5 flex items-center">
           {tableFor === "weekly" && (
             <SelectColumnFilter setFilter={setFilter} />
           )}
@@ -85,13 +90,28 @@ const Table = ({ columns, data, tableFor }) => {
                   className={`${
                     column.isSorted &&
                     (column.isSortedDesc
-                      ? "border-black border-t-4"
-                      : "border-black border-b-4")
+                      ? "border-black border-b-4"
+                      : "border-black border-t-4")
                   }`}
                   key={""}
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                 >
-                  <div>{column.render("Header")}</div>
+                  <div className="flex items-center">
+                    <div className="w-4 mr-1">
+                      {column.isSorted ? (
+                        <>
+                          {column.isSortedDesc ? (
+                            <ArrowSmDownIcon className="text-black" />
+                          ) : (
+                            <ArrowSmUpIcon className="text-black" />
+                          )}
+                        </>
+                      ) : (
+                        <SwitchVerticalIcon className="text-gray-400" />
+                      )}
+                    </div>
+                    {column.render("Header")}
+                  </div>
                 </th>
               ))}
             </tr>
