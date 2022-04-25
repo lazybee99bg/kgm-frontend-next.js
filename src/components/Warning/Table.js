@@ -87,12 +87,6 @@ const Table = ({ columns, data, tableFor }) => {
                 // Add the sorting props to control sorting.
                 <th
                   /* Add a sort direction indicator */
-                  className={`${
-                    column.isSorted &&
-                    (column.isSortedDesc
-                      ? "border-black border-b-4"
-                      : "border-black border-t-4")
-                  }`}
                   key={""}
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                 >
