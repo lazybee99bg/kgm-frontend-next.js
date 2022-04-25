@@ -20,7 +20,7 @@ export const getStaticProps = async (context: any) => {
   const alertSlug = context.params.alertSlug;
   const articlesId = alertSlug?.slice(
     alertSlug.indexOf(".") + 1,
-    alertSlug.length
+    alertSlug.lastIndexOf(".")
   );
 
   const responseArticles = await apiNews.get(`alerts/${articlesId}`, {

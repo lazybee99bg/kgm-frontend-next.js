@@ -18,7 +18,7 @@ export const getStaticProps = async (context: any) => {
   const newsSlug = context.params.newsSlug;
   const articlesId = newsSlug?.slice(
     newsSlug.indexOf(".") + 1,
-    newsSlug.length
+    newsSlug.lastIndexOf(".")
   );
 
   const responseArticles = await apiNews.get(`news-p/${articlesId}`, {

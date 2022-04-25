@@ -30,7 +30,7 @@ const AlertsLayout = ({ data }: NewsLayoutProps) => {
               key={index}
               className="cursor-pointer flex flex-col"
               title={item.attributes.title}
-              href={`alert/${urlSlug(item.attributes.title)}.${item.id}`}
+              href={`alert/${urlSlug(item.attributes.title)}.${item.id}.html`}
             >
               {item?.attributes?.image?.data === null ? (
                 <Image
