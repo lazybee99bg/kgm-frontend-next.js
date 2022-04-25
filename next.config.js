@@ -3,8 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   images: {
-    loader: "akamai",
-    path: "",
+    // loader: "akamai",
+    // path: "/home",
     domains: [
       "tinnhiemmang.vn",
       "staging.khonggianmang.vn",
