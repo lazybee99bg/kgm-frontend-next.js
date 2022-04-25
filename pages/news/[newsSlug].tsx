@@ -1,6 +1,7 @@
 import React from "react";
 import apiNews from "../../src/api/getNews";
 import ArticlesLayout from "../../src/common/ArticlesLayout";
+import urlSlug from "url-slug";
 
 const NewsArticle = (props: any) => {
   return (
@@ -11,13 +12,6 @@ const NewsArticle = (props: any) => {
       />
     </div>
   );
-};
-
-export const getStaticPaths = async () => {
-  return {
-    paths: [], //indicates that no page needs be created at build time
-    fallback: "blocking", //indicates the type of fallback
-  };
 };
 
 export const getStaticProps = async (context: any) => {
@@ -48,6 +42,22 @@ export const getStaticProps = async (context: any) => {
       ),
     },
     revalidate: 10,
+  };
+};
+
+export const getStaticPaths = async () => {
+  const articles: any = await apiNews.get(`news-p`);
+
+  const paths = articles.data.map((item: any) => {
+    return {
+      params: {
+        alertSlug: `${urlSlug(item.attributes.title)}.${item.id}`,
+      },
+    };
+  });
+  return {
+    paths: paths, //indicates that no page needs be created at build time
+    fallback: "blocking", //indicates the type of fallback
   };
 };
 

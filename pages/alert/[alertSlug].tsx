@@ -1,8 +1,11 @@
 import React from "react";
 import ArticlesLayout from "../../src/common/ArticlesLayout";
 import apiNews from "../../src/api/getNews";
+import urlSlug from "url-slug";
 
 const AlertNews = (props: any) => {
+  // console.log(props.id);
+
   return (
     <div>
       <ArticlesLayout
@@ -11,12 +14,6 @@ const AlertNews = (props: any) => {
       />
     </div>
   );
-};
-export const getStaticPaths = async () => {
-  return {
-    paths: [], //indicates that no page needs be created at build time
-    fallback: "blocking", //indicates the type of fallback
-  };
 };
 
 export const getStaticProps = async (context: any) => {
@@ -38,6 +35,7 @@ export const getStaticProps = async (context: any) => {
       fields: "title,createdAt",
     },
   });
+  // const articles: any = await apiNews.get(`alerts`);
 
   return {
     props: {
@@ -45,8 +43,25 @@ export const getStaticProps = async (context: any) => {
       suggestArticlesData: responseSuggestArticles.data.filter(
         (item: any) => item.id != articlesId
       ),
+      // id: articles.data,
     },
     revalidate: 10,
+  };
+};
+
+export const getStaticPaths = async () => {
+  const articles: any = await apiNews.get(`alerts`);
+
+  const paths = articles.data.map((item: any) => {
+    return {
+      params: {
+        alertSlug: `${urlSlug(item.attributes.title)}.${item.id}`,
+      },
+    };
+  });
+  return {
+    paths: paths, //indicates that no page needs be created at build time
+    fallback: "blocking", //indicates the type of fallback
   };
 };
 export default AlertNews;

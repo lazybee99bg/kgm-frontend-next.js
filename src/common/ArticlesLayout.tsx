@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Image from "next/image";
 import moment from "moment";
-import ApiNew, { BASE_URL_STRAPI } from "../../src/api/getNews";
+import { BASE_URL_STRAPI } from "../../src/api/getNews";
 import LayoutPage from "./LayoutPage";
 import urlSlug from "url-slug";
 import MarkdownLayout from "./MarkdownLayout";
