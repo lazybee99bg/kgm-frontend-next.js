@@ -6,7 +6,7 @@ import LayoutPage from "../../src/common/LayoutPage";
 const Alert: NextPage = () => {
   const router = useRouter();
   useEffect(() => {
-    router.push("/");
+    router.push("/home");
   });
   return (
     <div>

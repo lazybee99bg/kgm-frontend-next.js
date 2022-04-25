@@ -5,7 +5,7 @@ import LayoutPage from "../src/common/LayoutPage";
 import apiNews from "../src/api/getNews";
 
 const CVEReport: NextPage = (props: any) => {
-  // console.log(props);
+  console.log(props);
 
   return (
     <>
