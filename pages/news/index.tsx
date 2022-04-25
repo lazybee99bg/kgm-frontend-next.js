@@ -6,7 +6,7 @@ import LayoutPage from "../../src/common/LayoutPage";
 const News: NextPage = () => {
   const router = useRouter();
   useEffect(() => {
-    router.push("/home");
+    router.push("/");
   });
   return (
     <div>

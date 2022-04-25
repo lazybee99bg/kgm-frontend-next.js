@@ -6,6 +6,7 @@ import urlSlug from "url-slug";
 import MarkdownLayout from "./MarkdownLayout";
 import { CalendarIcon } from "@heroicons/react/outline";
 import "moment/locale/vi";
+import Link from "next/link";
 
 type ArticlesLayoutProps = {
   articlesData: any;
@@ -63,32 +64,35 @@ const ArticlesLayout = ({
             <div className="grid sm:grid-cols-2 lg:grid-cols-1 grid-cols-1 gap-4 max-h-screen overflow-y-scroll">
               {suggestArticles.map(
                 (item: any, index: React.Key | null | undefined) => (
-                  <a
+                  <Link
                     key={index}
-                    className="flex flex-col px-2 cursor-pointer mb-4"
-                    title={item.attributes.title}
-                    href={`/alert/${urlSlug(item.attributes.title)}.${item.id}`}
+                    href={`${urlSlug(item.attributes.title)}.${item.id}`}
                   >
-                    {item?.attributes?.image?.data?.attributes?.formats
-                      ?.thumbnail?.url && (
-                      <img
-                        className="h-44 rounded mb-1 object-cover"
-                        alt="Loading.."
-                        src={getArticlesImage(
-                          item?.attributes?.image?.data?.attributes?.formats
-                            ?.thumbnail?.url
-                        )}
-                      />
-                    )}
-                    <span className="font-semibold text-dark">
-                      {item.attributes.title}
-                    </span>
+                    <a
+                      className="flex flex-col px-2 cursor-pointer mb-4"
+                      title={item.attributes.title}
+                    >
+                      {item?.attributes?.image?.data?.attributes?.formats
+                        ?.thumbnail?.url && (
+                        <img
+                          className="h-44 rounded mb-1 object-cover"
+                          alt="Loading.."
+                          src={getArticlesImage(
+                            item?.attributes?.image?.data?.attributes?.formats
+                              ?.thumbnail?.url
+                          )}
+                        />
+                      )}
+                      <span className="font-semibold text-dark">
+                        {item.attributes.title}
+                      </span>
 
-                    <p className="flex flex-row items-center">
-                      <CalendarIcon className="w-5 mr-1 text-gray-600 inline-block" />
-                      {moment(item.attributes.createdAt).calendar()}
-                    </p>
-                  </a>
+                      <p className="flex flex-row items-center">
+                        <CalendarIcon className="w-5 mr-1 text-gray-600 inline-block" />
+                        {moment(item.attributes.createdAt).calendar()}
+                      </p>
+                    </a>
+                  </Link>
                 )
               )}
             </div>

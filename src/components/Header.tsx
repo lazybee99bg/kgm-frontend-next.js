@@ -13,7 +13,7 @@ const Header = () => {
   const headerEl = [
     {
       title: "Trang chủ",
-      link: "/home",
+      link: "/",
       element: [],
     },
     {
