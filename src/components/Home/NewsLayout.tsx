@@ -35,7 +35,7 @@ const NewsLayout = ({ data }: NewsLayoutProps) => {
           title={pinnedNews?.attributes?.title}
           href={`news/${urlSlug(pinnedNews?.attributes?.title)}.${
             pinnedNews?.id
-          }.html`}
+          }`}
         >
           {/* <img
             className="rounded-t mb-3 w-full h-96 object-cover "
@@ -65,9 +65,7 @@ const NewsLayout = ({ data }: NewsLayoutProps) => {
                   key={index}
                   className="flex flex-col mb-2 text-justify cursor-pointer"
                   title={item?.attributes.title}
-                  href={`news/${urlSlug(item?.attributes.title)}.${
-                    item?.id
-                  }.html`}
+                  href={`news/${urlSlug(item?.attributes.title)}.${item?.id}`}
                 >
                   {/* <img
                     className="rounded mb-1 w-96 h-48 object-cover"
