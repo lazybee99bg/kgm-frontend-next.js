@@ -10,46 +10,26 @@ import { CalendarIcon } from "@heroicons/react/outline";
 import "moment/locale/vi";
 
 type ArticlesLayoutProps = {
-  articlesSlug: any;
-  articlesApi: string;
+  articlesData: any;
+  suggestArticlesData: any;
 };
-const ArticlesLayout = ({ articlesSlug, articlesApi }: ArticlesLayoutProps) => {
-  const articlesId = articlesSlug?.slice(
-    articlesSlug.indexOf(".") + 1,
-    articlesSlug.length
-  );
+const ArticlesLayout = ({
+  articlesData,
+  suggestArticlesData,
+}: ArticlesLayoutProps) => {
   const [articles, setArticles] = useState<any>({});
   const [suggestArticles, setSuggestArticles] = useState<any>([]);
+
   const getArticlesImage = (imageUrl: any) => {
     return `${BASE_URL_STRAPI}${imageUrl}`;
   };
+
   useEffect(() => {
     window.scrollTo(0, 0);
-    (async () => {
-      const responseArticles = await ApiNew.get(
-        `${articlesApi}/${articlesId}`,
-        {
-          params: {
-            populate: "*",
-          },
-        }
-      );
-      const _articles = responseArticles.data.attributes;
-      setArticles(_articles);
-      document.title = _articles.title;
-      const responseSuggestArticles = await ApiNew.get(`${articlesApi}`, {
-        params: {
-          populate: "image",
-          fields: "title,createdAt",
-        },
-      });
-      setSuggestArticles(
-        responseSuggestArticles.data.filter(
-          (item: any) => item.id != articlesId
-        )
-      );
-    })();
-  }, [articlesId, articlesApi]);
+    setArticles(articlesData);
+    document.title = articles.title;
+    setSuggestArticles(suggestArticlesData);
+  }, [articlesData, suggestArticlesData, articles]);
 
   return (
     <LayoutPage title={articles?.title}>
