@@ -15,10 +15,10 @@ const NewsArticle = (props: any) => {
 };
 
 export const getStaticProps = async (context: any) => {
-  const alertSlug = context.params.newsSlug;
-  const articlesId = alertSlug?.slice(
-    alertSlug.indexOf(".") + 1,
-    alertSlug.length
+  const newsSlug = context.params.newsSlug;
+  const articlesId = newsSlug?.slice(
+    newsSlug.indexOf(".") + 1,
+    newsSlug.length
   );
 
   const responseArticles = await apiNews.get(`news-p/${articlesId}`, {
@@ -51,7 +51,7 @@ export const getStaticPaths = async () => {
   const paths = articles.data.map((item: any) => {
     return {
       params: {
-        alertSlug: `${urlSlug(item.attributes.title)}.${item.id}`,
+        newsSlug: `${urlSlug(item.attributes.title)}.${item.id}`,
       },
     };
   });
