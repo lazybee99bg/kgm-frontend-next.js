@@ -139,7 +139,7 @@ const Footer = () => {
               </div>
             ))}
             <div className=" w-fill flex md:flex-col flex-row lg:items-end items-start px-5 lg:mt-10 mt-5">
-              <Link href="/home" passHref>
+              <Link href="/" passHref>
                 <div className="relative lg:w-40 w-36 h-24 cursor-pointer">
                   <Image
                     src={logo}
