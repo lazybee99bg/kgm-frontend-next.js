@@ -1,7 +1,10 @@
 import React from "react";
 import urlSlug from "url-slug";
 import { BASE_URL_STRAPI } from "../../api/getNews";
+import ReactMarkdown from "react-markdown";
 import MarkdownLayout from "../../common/MarkdownLayout";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 
 type CellLayoutProps = {
   value: any;
@@ -14,7 +17,7 @@ const getImageNews = (pathUrlImage: any) => {
 const CellLayout = ({ value }: CellLayoutProps) => {
   return (
     <a
-      href={`alert/${urlSlug(value[0])}.${value[1]}.html`}
+      href={`alert/${urlSlug(value[0])}.${value[1]}`}
       target="_blank"
       rel="noreferrer"
       className="flex md:flex-row flex-col items-center mx-4 my-6 cursor-pointer"
