@@ -56,7 +56,7 @@ export const getStaticPaths = async () => {
     };
   });
   return {
-    paths: paths, //indicates that no page needs be created at build time
+    paths: paths, //indicates page needs be created at build time
     fallback: "blocking", //indicates the type of fallback
   };
 };
