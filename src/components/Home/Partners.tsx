@@ -1,7 +1,8 @@
 import React from "react";
 import MovingDot from "../../common/MovingDot";
 import importAll from "../../common/importAll";
-import Image from "next/image";
+// import Image from "next/image";
+import Image from "../Image";
 import { PlusCircleIcon } from "@heroicons/react/outline";
 
 const Partners = () => {

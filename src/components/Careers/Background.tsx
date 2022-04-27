@@ -1,4 +1,5 @@
-import Image from "next/image";
+// import Image from "next/image";
+import Image from "../Image";
 import React from "react";
 import shape1 from "../../../assets/images/shape1.png";
 import shape2 from "../../../assets/images/shape2.svg";

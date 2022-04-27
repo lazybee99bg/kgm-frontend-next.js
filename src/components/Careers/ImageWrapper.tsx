@@ -1,4 +1,5 @@
-import Image from "next/image";
+// import Image from "next/image";
+import Image from "../Image";
 import React, { useState } from "react";
 import { Controlled as Zoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";

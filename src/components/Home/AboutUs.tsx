@@ -2,7 +2,8 @@ import React from "react";
 import { CheckIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import MovingDot from "../../common/MovingDot";
-import Image from "next/image";
+// import Image from "next/image";
+import Image from "../Image";
 import key_solution from "../../../assets/images/key-solution.gif";
 
 const AboutUs = () => {

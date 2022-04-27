@@ -1,4 +1,5 @@
-import Image from "next/image";
+// import Image from "next/image";
+import Image from "../components/Image";
 import Link from "next/link";
 import React from "react";
 import logo from "../../assets/images/logo_NCSC_white.png";

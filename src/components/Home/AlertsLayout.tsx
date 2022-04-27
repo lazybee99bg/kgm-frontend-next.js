@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BASE_URL_STRAPI } from "../../api/getNews";
 import imgDefault from "../../../assets/images/news-security.jpg";
 import urlSlug from "url-slug";
-import Image from "next/image";
+// import Image from "next/image";
+import Image from "../Image";
 import Link from "next/link";
 
 type NewsLayoutProps = {

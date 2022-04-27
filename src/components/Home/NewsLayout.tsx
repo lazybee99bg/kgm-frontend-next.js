@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ApiNew, { BASE_URL_STRAPI } from "../../api/getNews";
 import urlSlug from "url-slug";
-import Image from "next/image";
+// import Image from "next/image";
+import Image from "../Image";
 import Link from "next/link";
 
 type NewsLayoutProps = {

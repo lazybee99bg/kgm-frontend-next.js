@@ -1,7 +1,8 @@
 import React from "react";
 import Background from "./Background";
 import love from "../../../assets/images/love.png";
-import Image from "next/image";
+// import Image from "next/image";
+import Image from "../Image";
 import bg from "../../../assets/images/background-office.jpeg";
 import Button from "../../common/Button";
 const Banner = () => {
