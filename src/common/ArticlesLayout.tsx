@@ -54,7 +54,10 @@ const ArticlesLayout = ({
                 <CalendarIcon className="w-5 mr-1 inline-block" />
                 {moment(articles.createdAt).calendar()}
               </span>
-              <div className="mt-10 mb-3" style={{ lineHeight: 2 }}>
+              <div
+                className="mt-10 mb-3 overflow-clip"
+                style={{ lineHeight: 2 }}
+              >
                 <MarkdownLayout>{articles.content}</MarkdownLayout>
               </div>
             </div>
