@@ -82,8 +82,8 @@ const Header = () => {
       link: "",
       element: [
         {
-          name: "Cảnh báo tuần",
-          link: "/canhbaotuan",
+          name: "Thông tin cảnh báo",
+          link: "/canhbaoattt",
         },
         {
           name: "Lỗ hổng đang bị khai thác",

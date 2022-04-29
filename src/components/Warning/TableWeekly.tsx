@@ -48,7 +48,7 @@ const TableWeekly = ({ data }: TableWeeklyProps) => {
   return (
     <div className="bg-gray-50">
       <div className="container">
-        <h1 className="text-4xl font-bold py-10">Cảnh báo tuần</h1>
+        <h1 className="text-4xl font-bold py-10">Cảnh báo an toàn thông tin</h1>
         {loaded ? (
           <Table columns={columns} data={news} tableFor="weekly" />
         ) : (
