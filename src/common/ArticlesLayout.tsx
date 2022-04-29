@@ -28,7 +28,7 @@ const ArticlesLayout = ({
     result = result?.replaceAll("**", "");
     result = result?.replaceAll("###", "");
 
-    return result?.split(/\s+/).slice(0, 50).join(" ") + "...";
+    return result?.split(/\s+/).slice(0, 20).join(" ") + "...";
   };
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const ArticlesLayout = ({
   return (
     <LayoutPage
       title={articles?.title}
-      description={getDescription(articles?.attributes?.content)}
+      description={getDescription(articles.content)}
       image={getArticlesImage(articles?.image?.data?.attributes?.url)}
     >
       <div className="container mt-3">

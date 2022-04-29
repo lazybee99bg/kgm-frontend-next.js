@@ -19,6 +19,8 @@ const LayoutPage = ({
   image,
 }: LayoutPageProps) => {
   const router = useRouter();
+  // console.log(description);
+
   return (
     <div>
       <Head>
@@ -26,7 +28,7 @@ const LayoutPage = ({
           {title ||
             "An toàn trên không gian mạng - khonggianmang.vn - Trung tâm Giám sát an toàn không gian mạng quốc gia - National Cyber Security Center (NCSC)"}
         </title>
-        <meta name="description" content={` ${title}`} />
+        <meta name="description" content={` ${description}`} />
         <meta property="og:title" content={`${title}`} />
         <meta property="og:description" content={` ${description}`} />
         <meta
@@ -35,6 +37,9 @@ const LayoutPage = ({
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${image}`} />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="600" />
+        <meta property="og:image:alt" content={`${title}`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
