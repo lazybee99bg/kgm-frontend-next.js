@@ -7,8 +7,6 @@ import MarkdownLayout from "./MarkdownLayout";
 import { CalendarIcon } from "@heroicons/react/outline";
 import "moment/locale/vi";
 import Link from "next/link";
-import { NextSeo } from "next-seo";
-import { useRouter } from "next/router";
 
 type ArticlesLayoutProps = {
   articlesData: any;
@@ -20,22 +18,12 @@ const ArticlesLayout = ({
 }: ArticlesLayoutProps) => {
   const [articles, setArticles] = useState<any>({});
   const [suggestArticles, setSuggestArticles] = useState<any>([]);
-  const router = useRouter();
-  const url = `https://khonggianmang.vn${router.asPath}`;
+
   const getArticlesImage = (imageUrl: any) => {
     return `${BASE_URL_STRAPI}${imageUrl}`;
   };
 
-  const getDescription = (str: any) => {
-    var result = str;
-    result = result?.replaceAll("**", "");
-    result = result?.replaceAll("###", "");
-
-    return result?.split(/\s+/).slice(0, 50).join(" ") + "...";
-  };
-
   useEffect(() => {
-    // console.log(url);
     window.scrollTo(0, 0);
     setArticles(articlesData);
     document.title = articles.title;
@@ -44,26 +32,6 @@ const ArticlesLayout = ({
 
   return (
     <LayoutPage title={articles?.title}>
-      <NextSeo
-        title={articles?.title}
-        description={getDescription(articles?.attributes?.content)}
-        canonical={url}
-        openGraph={{
-          url: url,
-          title: articles?.title,
-          description: getDescription(articles?.attributes?.content),
-          images: [
-            {
-              url: articles?.image?.data?.attributes?.url,
-              // width: 800,
-              // height: 600,
-              alt: articles?.title,
-              type: "image/jpeg",
-            },
-          ],
-          site_name: "SiteName",
-        }}
-      />
       <div className="container mt-3">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div
