@@ -6,6 +6,8 @@ import "../styles/home.scss";
 import "../styles/flat_icon.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import SEO from "../next-seo.config";
+import { DefaultSeo } from "next-seo";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -31,6 +33,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           }}
         />
       </Head>
+      <DefaultSeo {...SEO} />
+
       <Component {...pageProps} />
     </>
   );
