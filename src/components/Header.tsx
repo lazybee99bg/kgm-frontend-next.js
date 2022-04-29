@@ -78,11 +78,11 @@ const Header = () => {
       ],
     },
     {
-      title: "Cảnh báo ATTT",
+      title: "Thông tin cảnh báo",
       link: "",
       element: [
         {
-          name: "Thông tin cảnh báo",
+          name: "Cảnh báo ATTT",
           link: "/canhbaoattt",
         },
         {
