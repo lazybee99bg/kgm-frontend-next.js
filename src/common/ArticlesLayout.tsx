@@ -23,14 +23,6 @@ const ArticlesLayout = ({
     return `${BASE_URL_STRAPI}${imageUrl}`;
   };
 
-  const getDescription = (str: any) => {
-    var result = str;
-    result = result?.replaceAll("**", "");
-    result = result?.replaceAll("###", "");
-
-    return result?.split(/\s+/).slice(0, 50).join(" ") + "...";
-  };
-
   useEffect(() => {
     window.scrollTo(0, 0);
     setArticles(articlesData);
@@ -39,11 +31,7 @@ const ArticlesLayout = ({
   }, [articlesData, suggestArticlesData, articles]);
 
   return (
-    <LayoutPage
-      title={articles?.title}
-      description={getDescription(articles?.attributes?.content)}
-      image={getArticlesImage(articles?.image?.data?.attributes?.url)}
-    >
+    <LayoutPage title={articles?.title}>
       <div className="container mt-3">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div
