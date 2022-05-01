@@ -41,6 +41,7 @@ const ArticlesLayout = ({
             {articles.image && (
               <img
                 src={getArticlesImage(articles?.image?.data?.attributes?.url)}
+                alt={articles.title}
                 className="w-full mb-2 rounded-t oject-cover"
                 height={315}
               />

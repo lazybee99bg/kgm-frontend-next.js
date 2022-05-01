@@ -1,11 +1,31 @@
 import React from "react";
 import apiNews from "../../src/api/getNews";
 import ArticlesLayout from "../../src/common/ArticlesLayout";
+import { BASE_URL_STRAPI } from "../../src/api/getNews";
+
 import urlSlug from "url-slug";
+import Head from "next/head";
 
 const NewsArticle = (props: any) => {
   return (
     <div>
+      <Head>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${props.articlesData.title}`} />
+        <meta
+          property="og:description"
+          content={` ${props.articlesData.content
+            .replaceAll("**", "")
+            .replaceAll("###", "")
+            .split(/\s+/)
+            .slice(0, 50)
+            .join(" ")}`}
+        />
+        <meta
+          property="og:image"
+          content={`${BASE_URL_STRAPI}${props.articlesData.image.data.attributes.url}`}
+        />
+      </Head>
       <ArticlesLayout
         articlesData={props.articlesData}
         suggestArticlesData={props.suggestArticlesData}
