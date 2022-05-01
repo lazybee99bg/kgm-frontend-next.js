@@ -56,7 +56,7 @@ const ArticlesLayout = ({
                 {moment(articles.createdAt).calendar()}
               </span>
               <div
-                className="mt-10 mb-3 overflow-clip"
+                className="mt-10 mb-3 overflow-hidden"
                 style={{ lineHeight: 2 }}
               >
                 <MarkdownLayout>{articles.content}</MarkdownLayout>
