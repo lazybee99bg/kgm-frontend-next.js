@@ -16,8 +16,6 @@ const AlertNews = (props: any) => {
         <meta
           property="og:description"
           content={` ${props.articlesData.content
-            ?.replaceAll("**", "")
-            .replaceAll("###", "")
             .split(/\s+/)
             .slice(0, 50)
             .join(" ")}`}
