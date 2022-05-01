@@ -16,16 +16,18 @@ const AlertNews = (props: any) => {
         <meta
           property="og:description"
           content={` ${props.articlesData.content
-            .replaceAll("**", "")
+            ?.replaceAll("**", "")
             .replaceAll("###", "")
             .split(/\s+/)
             .slice(0, 50)
             .join(" ")}`}
         />
-        <meta
-          property="og:image"
-          content={`${BASE_URL_STRAPI}${props.articlesData.image.data.attributes.url}`}
-        />
+        {props.articlesData.image && (
+          <meta
+            property="og:image"
+            content={`${BASE_URL_STRAPI}${props.articlesData?.image?.data?.attributes?.url}`}
+          />
+        )}
       </Head>
       <ArticlesLayout
         articlesData={props.articlesData}
