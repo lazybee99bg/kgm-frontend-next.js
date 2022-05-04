@@ -6,6 +6,10 @@ build:
     - yarn
     - yarn next build
     - yarn next export
+  artifacts:
+    paths:
+      - .next
+      - out
 
 deploy:
   stage: deploy
