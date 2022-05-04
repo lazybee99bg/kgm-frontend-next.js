@@ -14,5 +14,4 @@ build:
 deploy:
   stage: deploy
   script:
-    - pwd
-    - ls -la
+    - scp -r root@103.192.236.239:/opt/out ./out
