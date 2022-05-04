@@ -11,7 +11,7 @@ const AlertNews = (props: any) => {
   return (
     <div>
       <Head>
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={`${props.articlesData.title}`} />
         <meta
           property="og:description"
@@ -26,6 +26,12 @@ const AlertNews = (props: any) => {
             content={`${BASE_URL_STRAPI}${props.articlesData?.image?.data?.attributes?.url}`}
           />
         )}
+        <meta
+          property="og:url"
+          content={`${BASE_URL_STRAPI}/alert/${props.articlesData.slug}`}
+        />
+        <meta property="og:locale" content="vi_VI" />
+        <meta property="og:image:alt" content={`${props.articlesData.title}`} />
       </Head>
       <ArticlesLayout
         articlesData={props.articlesData}

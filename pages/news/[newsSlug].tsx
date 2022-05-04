@@ -10,7 +10,7 @@ const NewsArticle = (props: any) => {
   return (
     <div>
       <Head>
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={`${props.articlesData.title}`} />
         <meta
           property="og:description"
@@ -25,6 +25,8 @@ const NewsArticle = (props: any) => {
             content={`${BASE_URL_STRAPI}${props.articlesData?.image?.data?.attributes?.url}`}
           />
         )}
+        <meta property="og:locale" content="vi_VI" />
+        <meta property="og:image:alt" content={`${props.articlesData.title}`} />
       </Head>
       <ArticlesLayout
         articlesData={props.articlesData}

@@ -30,6 +30,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     })();`,
           }}
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`../assets/images/logo_NCSC.png`} />
+        <meta property="og:locale" content="vi_VI" />
       </Head>
       <Component {...pageProps} />
     </>
