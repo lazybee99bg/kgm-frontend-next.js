@@ -1,14 +1,12 @@
 build:
   stage: build
   script:
-    - echo "this is build stage"
-
-test:
-  stage: test
-  script:
-    - echo "this is test stage"
+    - yarn
+    - yarn next build
+    - yarn next export
 
 deploy:
   stage: deploy
   script:
-    - echo "this is deploy stage"
+    - pwd
+    - ls -la
