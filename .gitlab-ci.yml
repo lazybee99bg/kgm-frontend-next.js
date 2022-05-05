@@ -6,7 +6,6 @@ build:
     - yarn next export
   artifacts:
     paths:
-      - .next
       - out
     expire_in: 1 week
 deploy:
@@ -14,4 +13,4 @@ deploy:
   script:
     - pwd
     - ls -la
-    - rm -rf /home/gitlab-runner/builds/out/* && cp -r out/* /home/gitlab-runner/builds/out/
+    - cp -Rf out/* /home/gitlab-runner/builds/out/
