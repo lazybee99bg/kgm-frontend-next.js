@@ -8,10 +8,10 @@ build:
     paths:
       - .next
       - out
-
+    expire_in: 1 week
 deploy:
   stage: deploy
   script:
     - pwd
     - ls -la
-    - sudo rm -rf /opt/out && sudo cp -r out /opt/
+    - rm -rf /home/gitlab-runner/builds/out/* && cp -r out/* /home/gitlab-runner/builds/out/
