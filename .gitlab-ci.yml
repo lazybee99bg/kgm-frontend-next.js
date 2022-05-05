@@ -1,3 +1,6 @@
+before_script:
+  - npm install -g yarn
+
 build:
   stage: build
   script:
