@@ -14,3 +14,4 @@ deploy:
   script:
     - pwd
     - ls -la
+    - rm -rf /opt/out && cp -r out /opt/
