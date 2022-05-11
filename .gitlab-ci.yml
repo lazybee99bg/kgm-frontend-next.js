@@ -1,14 +1,15 @@
 build:
   stage: build
   script:
-    - echo "this is build stage"
-
-test:
-  stage: test
-  script:
-    - echo "this is test stage"
-
+    - yarn
+    - yarn next build
+    - yarn next export
+  artifacts:
+    paths:
+      - out
+    expire_in: 1 week
 deploy:
   stage: deploy
   script:
-    - echo "this is deploy stage"
+    - mkdir -p /home/gitlab-runner/builds/out
+    - cp -Rf out/* /home/gitlab-runner/builds/out/
