@@ -17,7 +17,7 @@ import {
 } from "@heroicons/react/solid";
 
 const Table = ({ columns, data, tableFor }) => {
-  // Use the state and functions returned from useTable to build your UI
+  // Use the state and functions returned from useTable to build UI
   const {
     getTableProps,
     getTableBodyProps,

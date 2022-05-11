@@ -11,7 +11,10 @@ const NewsArticle = (props: any) => {
     <div>
       <Head>
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={`${props.articlesData.title}`} />
+        <meta
+          property="og:title"
+          content={`${props.articlesData.title} | Cổng không gian mạng`}
+        />
         <meta
           property="og:description"
           content={` ${props.articlesData.content

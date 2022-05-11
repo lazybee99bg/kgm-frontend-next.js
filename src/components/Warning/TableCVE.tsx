@@ -5,6 +5,14 @@ import CellLayout from "./CellLayout";
 type TableCVEProps = {
   data: any;
 };
+
+const removeFirstWord = (str: string) => {
+  const indexOfSpace = str.indexOf(" ");
+  if (indexOfSpace === -1) {
+    return "";
+  }
+  return str.substring(indexOfSpace + 1);
+};
 const TableCVE = ({ data }: TableCVEProps) => {
   const [news, setNews] = useState([]);
   const [loaded, setLoaded] = useState(false);
@@ -12,7 +20,8 @@ const TableCVE = ({ data }: TableCVEProps) => {
   useEffect(() => {
     var mappedData = data.map((warning: any, index: any) => ({
       index: index + 1,
-      name: warning[1],
+      errorCode: warning[1].split(/\s+/).slice(0, 1).join(" "),
+      name: removeFirstWord(warning[1]),
       pointCVSS: warning[2],
       product: warning[3],
       shortDescription: warning[4],
@@ -25,22 +34,32 @@ const TableCVE = ({ data }: TableCVEProps) => {
     {
       Header: "TT",
       accessor: "index",
+      width: 50,
     },
     {
-      Header: "Mã lỗi quốc tế/Tên lỗ hổng",
+      Header: "Mã lỗi quốc tế",
+      accessor: "errorCode",
+      width: 100,
+    },
+    {
+      Header: "Tên lỗ hổng",
       accessor: "name",
+      width: 100,
     },
     {
       Header: "Điểm CVSS version 3.x",
       accessor: "pointCVSS",
+      width: 100,
     },
     {
       Header: "Sản phẩm/Dịch vụ",
       accessor: "product",
+      width: 100,
     },
     {
       Header: "Mô tả ngắn",
       accessor: "shortDescription",
+      minWidth: 300,
     },
   ];
 
