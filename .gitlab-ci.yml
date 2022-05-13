@@ -10,6 +10,7 @@ build:
 deploy:
   stage: deploy
   script:
-    - pwd
     - mkdir -p /home/gitlab-runner/builds/out
-    - cp -Rf out/* /home/gitlab-runner/builds/out/
+    - pwd
+    - ls -la ./out
+    - cp -Rf ./out/* /home/gitlab-runner/builds/out/
