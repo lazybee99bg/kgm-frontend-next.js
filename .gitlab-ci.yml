@@ -12,5 +12,5 @@ deploy:
   script:
     - mkdir -p /home/gitlab-runner/builds/out
     - pwd
-    - ls -la ./out
+    - ls -la ./out/alert
     - cp -Rf ./out/* /home/gitlab-runner/builds/out/
