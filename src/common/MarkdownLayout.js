@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 
 const MarkdownLayout = ({ children }) => {
+  const [markdown, setMarkdown] = React.useState("");
+  useEffect(() => {
+    if (children) {
+      const _markdown = children.replaceAll("</br>", "</br>\n");
+      setMarkdown(_markdown);
+    }
+  }, [children]);
   return (
     <ReactMarkdown
       className="markdown"
@@ -96,7 +103,7 @@ const MarkdownLayout = ({ children }) => {
         ),
       }}
     >
-      {children}
+      {markdown}
     </ReactMarkdown>
   );
 };
