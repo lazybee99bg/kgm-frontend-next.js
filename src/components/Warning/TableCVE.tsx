@@ -20,11 +20,11 @@ const TableCVE = ({ data }: TableCVEProps) => {
   useEffect(() => {
     var mappedData = data.map((warning: any, index: any) => ({
       index: index + 1,
-      errorCode: warning[1].split(/\s+/).slice(0, 1).join(" "),
-      name: removeFirstWord(warning[1]),
-      pointCVSS: warning[2],
-      product: warning[3],
-      shortDescription: warning[4],
+      // errorCode: warning[0].split(/\s+/).slice(0, 1).join(" "),
+      name: warning[0],
+      pointCVSS: warning[1],
+      product: warning[2],
+      shortDescription: warning[3],
     }));
     setNews(mappedData);
     setLoaded(true);
@@ -36,15 +36,15 @@ const TableCVE = ({ data }: TableCVEProps) => {
       accessor: "index",
       width: 50,
     },
+    // {
+    //   Header: "Mã lỗi quốc tế",
+    //   accessor: "errorCode",
+    //   width: 100,
+    // },
     {
-      Header: "Mã lỗi quốc tế",
-      accessor: "errorCode",
-      width: 100,
-    },
-    {
-      Header: "Tên lỗ hổng",
+      Header: "Mã lỗi quốc tế/Tên lỗ hổng",
       accessor: "name",
-      width: 100,
+      // width: 200,
     },
     {
       Header: "Điểm CVSS version 3.x",
