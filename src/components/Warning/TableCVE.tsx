@@ -36,15 +36,9 @@ const TableCVE = ({ data }: TableCVEProps) => {
       accessor: "index",
       width: 50,
     },
-    // {
-    //   Header: "Mã lỗi quốc tế",
-    //   accessor: "errorCode",
-    //   width: 100,
-    // },
     {
-      Header: "Mã lỗi quốc tế/Tên lỗ hổng",
+      Header: "Mã lỗi quốc tế",
       accessor: "name",
-      // width: 200,
     },
     {
       Header: "Điểm CVSS version 3.x",
