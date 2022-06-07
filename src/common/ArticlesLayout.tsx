@@ -10,7 +10,7 @@ import Link from "next/link";
 
 type ArticlesLayoutProps = {
   articlesData: any;
-  suggestArticlesData: any;
+  suggestArticlesData: any[];
 };
 const ArticlesLayout = ({
   articlesData,
@@ -27,7 +27,14 @@ const ArticlesLayout = ({
     window.scrollTo(0, 0);
     setArticles(articlesData);
     document.title = articles.title;
-    setSuggestArticles(suggestArticlesData);
+    const _suggestArticles = suggestArticlesData.sort((a: any) => {
+      if (a?.attributes?.Tags === articles.Tags) {
+        return -1;
+      }
+      return 1;
+    });
+
+    setSuggestArticles(_suggestArticles);
   }, [articlesData, suggestArticlesData, articles]);
 
   return (

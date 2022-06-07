@@ -54,8 +54,7 @@ export const getStaticProps = async (context: any) => {
   const _articles = responseArticles.data.attributes;
   const responseSuggestArticles = await apiNews.get(`news-p`, {
     params: {
-      populate: "image",
-      fields: "title,createdAt",
+      populate: "*",
     },
   });
 
