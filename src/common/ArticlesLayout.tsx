@@ -28,14 +28,15 @@ const ArticlesLayout = ({
     setArticles(articlesData);
     document.title = articles.title;
     const _suggestArticles = suggestArticlesData.sort((a: any) => {
-      if (a?.attributes?.Tags === articles.Tags) {
+      if (a?.attributes?.Tags === articlesData?.Tags) {
+        console.log("yes");
         return -1;
       }
       return 1;
     });
 
     setSuggestArticles(_suggestArticles);
-  }, [articlesData, suggestArticlesData, articles]);
+  }, [articles, articlesData, suggestArticlesData]);
 
   return (
     <LayoutPage title={articles?.title}>
