@@ -1,3 +1,11 @@
+/**
+ * @author: ThaiND
+ * Created Date: Mon Jun 13 2022
+ * @description:
+ * @param:
+ * @returns:
+ * @example:
+ */
 import { ChevronDoubleUpIcon } from "@heroicons/react/outline";
 import { useEffect } from "react";
 import Scroll from "react-scroll";
@@ -29,9 +37,9 @@ const BackToTop = () => {
   return (
     <div
       className={`z-50 fixed bottom-0 right-0
-  duration-500 cursor-pointer hover:scale-110 -translate-x-1/2 -translate-y-1/2 
-  ${scroll.isScrolling ? "scale-100" : "scale-0 translate-y-full"} 
-`}
+   duration-500 cursor-pointer hover:scale-110 -translate-x-1/2 -translate-y-1/2 
+   ${scroll.isScrolling ? "scale-100" : "scale-0 translate-y-full"} 
+ `}
     >
       <button
         className="flex items-center justify-center"
@@ -44,10 +52,10 @@ const BackToTop = () => {
           });
         }}
       >
-        <svg className="progress-ring opacity-30" width={width} height={width}>
+        <svg className="progress-ring opacity-100" width={width} height={width}>
           <circle
             className="progress-ring__circle"
-            stroke="black"
+            stroke="#516177"
             strokeWidth={strokeWidth}
             fill="transparent"
             r={radius}
@@ -56,7 +64,7 @@ const BackToTop = () => {
           />
         </svg>
         <div
-          className={`absolute p-2 rounded-full bg-primary-400 text-white opacity-50`}
+          className={`absolute p-2 rounded-full bg-primary-400/20 text-primary-400`}
         >
           <ChevronDoubleUpIcon width={(width * 3) / 5} />
         </div>
