@@ -1,31 +1,66 @@
-import React, { useEffect, useState } from "react";
 import { ChevronDoubleUpIcon } from "@heroicons/react/outline";
-import { Link } from "react-scroll";
+import { useEffect } from "react";
+import Scroll from "react-scroll";
+import useScroll from "../hooks/useScroll";
 
 const BackToTop = () => {
-  const [visible, setVisible] = useState(false);
+  const scroll = useScroll();
+
+  const width = 64;
+  const strokeWidth = 4;
+  const radius = width / 2 - strokeWidth * 2;
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    });
-  }, []);
+    var circle = document.querySelector("circle");
+    if (circle) {
+      var circumference = radius * 2 * Math.PI;
+      circle.style.strokeDasharray = `${circumference} ${circumference}`;
+      circle.style.strokeDashoffset = `${circumference}`;
+      const offset = circumference - (scroll.progress / 100) * circumference;
+      circle.style.strokeDashoffset = offset.toString();
+    }
 
+    return () => {
+      if (circle) {
+        circle.style.strokeDashoffset = "0";
+      }
+    };
+  }, [scroll.progress, radius]);
   return (
     <div
-      className={`
-      w-12 p-2 z-50 fixed sm:bottom-20 sm:right-20 bottom-10 right-10 rounded-full bg-primary-400 text-white 
-      transition duration-500 delay-300 cursor-pointer hover:opacity-100
-      ${visible ? "opacity-50 scale-100" : "opacity-0 scale-0"}
-    `}
+      className={`z-50 fixed bottom-0 right-0
+  duration-500 cursor-pointer hover:scale-110 -translate-x-1/2 -translate-y-1/2 
+  ${scroll.isScrolling ? "scale-100" : "scale-0 translate-y-full"} 
+`}
     >
-      <Link to={"header-top"} spy={true} smooth={true} offset={-40}>
-        <ChevronDoubleUpIcon />
-      </Link>
+      <button
+        className="flex items-center justify-center"
+        onClick={() => {
+          const scroll = Scroll.animateScroll;
+          scroll.scrollToTop({
+            duration: 500,
+            delay: 100,
+            smooth: true,
+          });
+        }}
+      >
+        <svg className="progress-ring opacity-30" width={width} height={width}>
+          <circle
+            className="progress-ring__circle"
+            stroke="black"
+            strokeWidth={strokeWidth}
+            fill="transparent"
+            r={radius}
+            cx="50%"
+            cy="50%"
+          />
+        </svg>
+        <div
+          className={`absolute p-2 rounded-full bg-primary-400 text-white opacity-50`}
+        >
+          <ChevronDoubleUpIcon width={(width * 3) / 5} />
+        </div>
+      </button>
     </div>
   );
 };
