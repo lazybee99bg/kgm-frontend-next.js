@@ -89,6 +89,10 @@ const Header = () => {
           name: "Lỗ hổng đang bị khai thác",
           link: "/lohong",
         },
+        {
+          name: "Cơ sở dữ liệu CVE",
+          link: "/cvedb",
+        },
       ],
     },
     {
