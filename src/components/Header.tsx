@@ -90,7 +90,7 @@ const Header = () => {
           link: "/lohong",
         },
         {
-          name: "Cơ sở dữ liệu CVE",
+          name: "Cảnh báo lỗ hổng CVE nguy hiểm",
           link: "/cvedb",
         },
       ],

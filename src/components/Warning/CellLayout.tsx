@@ -21,7 +21,7 @@ const CellLayout = ({ value }: CellLayoutProps) => {
       <a
         target="_blank"
         rel="noreferrer"
-        className="flex md:flex-row flex-col items-center mx-4 my-6 cursor-pointer"
+        className="flex md:flex-row flex-col items-center justify-between mx-4 my-6 cursor-pointer"
         title={value[0]}
       >
         <div>
