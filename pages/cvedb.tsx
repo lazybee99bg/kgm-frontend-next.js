@@ -20,7 +20,7 @@ const CVEReport: NextPage = (props: any) => {
           </h1>
           <iframe
             className="w-full h-screen rounded-xl drop-shadow-lg pt-4 my-10 bg-white"
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS0L4Ht-NJZJy5n8kmwM1E4yhYoLbzyxTVq8VErAriAejUCqO3rGbXcREt-kVAhxA/pubhtml?widget=true&chrome=false&headers=false"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS0L4Ht-NJZJy5n8kmwM1E4yhYoLbzyxTVq8VErAriAejUCqO3rGbXcREt-kVAhxA/pubhtml"
           />
         </div>
       </LayoutPage>
