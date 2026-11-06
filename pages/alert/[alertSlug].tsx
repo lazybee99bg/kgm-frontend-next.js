@@ -65,14 +65,17 @@ export const getStaticProps = async (context: any) => {
   // const articles: any = await apiNews.get(`alerts`);
 
   return {
-    props: {
-      articlesData: _articles,
-      suggestArticlesData: responseSuggestArticles.data.filter(
-        (item: any) => item.id != articlesId
-      ),
-      // id: articles.data,
-    },
-    revalidate: 10,
+    // props: {
+    //   articlesData: _articles,
+    //   suggestArticlesData: responseSuggestArticles.data.filter(
+    //     (item: any) => item.id != articlesId
+    //   ),
+    //   // id: articles.data,
+    // },
+    // revalidate: 10,
+     // props: { data: res.data },
+    // revalidate: 10,
+    props: { data: [] }
   };
 };
 

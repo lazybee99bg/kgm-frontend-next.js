@@ -21,27 +21,30 @@ const home: NextPage = (props: any) => {
   );
 };
 export const getStaticProps = async () => {
-  const resAlerts = await apiNews.get("alerts", {
-    params: {
-      sort: "createdAt:desc",
-      populate: "image",
-      fields: "title,createdAt",
-      "pagination[limit]": 4,
-    },
-  });
+  // const resAlerts = await apiNews.get("alerts", {
+  //   params: {
+  //     sort: "createdAt:desc",
+  //     populate: "image",
+  //     fields: "title,createdAt",
+  //     "pagination[limit]": 4,
+  //   },
+  // });
 
-  const resNews = await apiNews.get("news-p", {
-    params: {
-      sort: "createdAt:desc",
-      populate: "image",
-      fields: "title,createdAt,pinned,description,category",
-      "pagination[limit]": 5,
-    },
-  });
+  // const resNews = await apiNews.get("news-p", {
+  //   params: {
+  //     sort: "createdAt:desc",
+  //     populate: "image",
+  //     fields: "title,createdAt,pinned,description,category",
+  //     "pagination[limit]": 5,
+  //   },
+  // });
 
   return {
-    props: { dataNews: resNews.data, dataAlerts: resAlerts.data },
-    revalidate: 10, // In seconds
+    // props: { dataNews: resNews.data, dataAlerts: resAlerts.data },
+    // revalidate: 10, // In seconds
+     // props: { data: res.data },
+    // revalidate: 10,
+    props: { data: [] }
   };
 };
 

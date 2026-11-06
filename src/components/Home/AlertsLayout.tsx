@@ -19,7 +19,8 @@ const AlertsLayout = ({ data }: NewsLayoutProps) => {
     return `${BASE_URL_STRAPI}${pathUrlImage}`;
   };
 
-  return news.length > 0 ? (
+  // return news.length > 0 ? (
+  return news?.length > 0 ? (
     <div className="container my-5">
       <h3 className="mt-10 mb-4 text-left text-4xl font-bold">
         Cảnh báo an toàn thông tin

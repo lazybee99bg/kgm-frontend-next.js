@@ -1,7 +1,7 @@
 // const REACT_APP_PRODUCTION_URL = process.env.REACT_APP_PRODUCTION_URL;
 // const REACT_APP_DEVELOPMENT_URL = process.env.REACT_APP_DEVELOPMENT_URL;
-const REACT_APP_PRODUCTION_URL = "https://khonggianmang.vn";
-const REACT_APP_DEVELOPMENT_URL = "https://staging.khonggianmang.vn";
+const REACT_APP_PRODUCTION_URL = "http://localhost:8080";
+const REACT_APP_DEVELOPMENT_URL = "http://localhost:8080";
 
 const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 const developmentMode =

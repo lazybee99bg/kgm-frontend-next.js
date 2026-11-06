@@ -28,8 +28,9 @@ export const getStaticProps = async () => {
   });
 
   return {
-    props: { data: res.data },
-    revalidate: 10,
+    // props: { data: res.data },
+    // revalidate: 10,
+    props: { data: [] }
   };
 };
 

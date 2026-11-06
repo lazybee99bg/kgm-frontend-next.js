@@ -13,10 +13,17 @@ const NewsLayout = ({ data }: NewsLayoutProps) => {
   const [news, setNews] = useState<any>([]);
   const [pinnedNews, setPinnedNews] = useState<any>({});
   useEffect(() => {
+    if (!data || data.length === 0) return; // Thêm dòng thoát sớm này
+    
     setPinnedNews(data[0]);
     for (let index = 0; index < data.length; index++) {
       const element = data[index];
       if (element.attributes.pinned) {
+  // useEffect(() => {
+  //   setPinnedNews(data[0]);
+  //   for (let index = 0; index < data.length; index++) {
+  //     const element = data[index];
+  //     if (element.attributes.pinned) {
         setPinnedNews(element);
         break;
       }
